@@ -24,4 +24,4 @@ bower_components
 
 dist/**/*
 
-.idea/
+.idea/**/*
