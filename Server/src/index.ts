@@ -2,14 +2,26 @@ import express, {Request, Response, NextFunction, Application, ErrorRequestHandl
 import {Server} from "http";
 import createHttpError from "http-errors";
 import {config} from "dotenv";
+import swaggerUi from "swagger-ui-express";
+import Router from "./routes";
 
 config();
 
 const app: Application = express();
 
-app.get(`/`, (req: Request, res: Response, next: NextFunction) =>{
-    res.send("Hola");
-});
+app.use(express.json());
+app.use(express.static("public"));
+app.use(
+    "/docs",
+    swaggerUi.serve,
+    swaggerUi.setup(undefined, {
+        swaggerOptions: {
+            url: "/swagger.json",
+        },
+    })
+);
+
+app.use(Router)
 
 app.use((req: Request, res: Response, next: NextFunction)=>{
     next(new createHttpError.NotFound())

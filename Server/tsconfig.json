@@ -1,18 +1,25 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Node 18",
-
-  "_version": "2.0.0",
-
   "compilerOptions": {
-    "lib": ["es2023"],
-    "module": "Node16",
-    "target": "es2022",
-
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node"
-  }
+    "allowJs": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "pretty": true,
+    "sourceMap": true,
+    "target": "es2021",
+    "outDir": "dist",
+    "resolveJsonModule": true,
+    "types": ["node"],
+    "typeRoots": [
+      "../node_modules/@types",
+      "./src/@types"
+    ],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true
+  },
+  "lib": ["es2021"],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
