@@ -1,10 +1,13 @@
 .App {
   text-align: center;
   padding: 1%;
-  background-color:#eeebeb; 
+  width: 100%;
+  min-height: 100vh;
 }
 
-
+.alignItems{
+  align-items: center;
+}
 
 .flexEnd{
   display:flex; 
@@ -23,6 +26,11 @@
   justify-content: space-between;
 }
 
+.flexSpaceEvenly{
+  display:flex;
+  justify-content: space-evenly;
+}
+
 .flexContainer{
   display:flex; 
   flex-basis: auto;
@@ -35,7 +43,13 @@
 
 .flexStart{
   display:flex; 
-  align-items: left;
+  align-items: flex-start;
+}
+
+.dimensions{
+  width: 50%;
+  min-height: 100vh;
+  align-items: center;
 }
 
 .padding{
@@ -54,10 +68,14 @@
   color: #fd4f9f; 
 }
 
-.color-gray{
-  color:#666666; 
+.color-white{
+  color: #ffffff;
 }
 
-.color-blue{
-  background-color: #674aaa; 
+.b-color-purple{
+  background-color: #9c77f6;
+}
+
+.color-purple{
+  color: #9c77f6;
 }

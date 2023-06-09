@@ -4,31 +4,31 @@
 }
 
 .homeImage{
-  width: 80%; 
+  width: 80%;
   border-radius: 20%;
   padding: 5%;
 }
 
 .HiImage{
-  width: 30%; 
+  width: 30%;
 }
 
 .flexEnd{
-  display:flex; 
+  display:flex;
   justify-content: flex-end;
 }
 .flexSpaceAround{
-  display:flex; 
+  display:flex;
   justify-content: space-around;
 }
 
 .flexContainer{
-  display:flex; 
+  display:flex;
   flex-basis: auto;
 }
 
 .flexEnd{
-  display:flex; 
+  display:flex;
   align-items: center;
 }
 
@@ -45,13 +45,13 @@
 }
 
 .titleColor{
-  color: #fd4f9f; 
+  color: #fd4f9f;
 }
 
 .color-gray{
-  color:#666666; 
+  color:#666666;
 }
 
 .color-blue{
-  color: #471ca8; 
+  color: #471ca8;
 }
