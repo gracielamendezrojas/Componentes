@@ -3,6 +3,30 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
+import {createMuiTheme, ThemeProvider} from '@mui/material/styles';
+
+
+const pTheme = createMuiTheme({
+  palette: {
+    primary:{
+      main: '#9c77f6'
+    },
+    text:{
+      primary: '#9c77f6'
+    }
+  }
+});
+
+const wTheme = createMuiTheme({
+  palette: {
+    primary:{
+      main: '#ffffff'
+    },
+    text:{
+      primary: '#ffffff'
+    }
+  }
+});
 
 
 function App() {
@@ -40,14 +64,19 @@ function App() {
             Log in
           </Typography>
 
-          <TextField  id="standard-basic" label="Email"  variant="standard" />
-          <TextField  id="standard-basic" label="Password" variant="standard" />
+          <ThemeProvider theme={wTheme}>
+            <TextField required label="Email"  variant="standard" focused />
+            <TextField required label="Password" variant="standard" focused />
 
-          <Button  variant="contained">
-            <Typography variant="h5" gutterBottom>
-              Log in
-            </Typography>
-          </Button>
+            <Button  variant="contained">
+              <Typography variant="h5" className='color-purple'>
+                Log in
+              </Typography>
+            </Button>
+
+          </ThemeProvider>
+
+
         </div>
 
         <div className = 'flexColumn flexSpaceEvenly dimensions'>
@@ -56,17 +85,22 @@ function App() {
             Register
           </Typography>
 
-          <TextField  id="standard-basic" label="First Name" variant="standard" />
-          <TextField  id="standard-basic" label="Last Name" variant="standard" />
-          <TextField  id="standard-basic" label="Nickname" variant="standard" />
-          <TextField  id="standard-basic" label="Email" variant="standard" />
-          <TextField  id="standard-basic" label="Password" variant="standard" />
+          <ThemeProvider theme={pTheme}>
+            <TextField required label="First Name" variant="standard" focused />
+            <TextField required label="Last Name" variant="standard" focused />
+            <TextField required label="Nickname" variant="standard" focused />
+            <TextField required label="Email" variant="standard" focused />
+            <TextField required label="Password" variant="standard" focused />
 
-          <Button  variant="contained" >
-            <Typography variant="h5" gutterBottom >
-              Register
-            </Typography>
-          </Button>
+            <Button  variant="contained" >
+              <Typography variant="h5" className='color-white' >
+                Register
+              </Typography>
+            </Button>
+
+          </ThemeProvider>
+
+
         </div>
 
       </div>
