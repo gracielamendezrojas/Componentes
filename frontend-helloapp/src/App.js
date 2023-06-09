@@ -14,7 +14,7 @@ function App() {
             HelloApp
           </Typography>
         </div>
-        <div className='flexEnd'>
+        <div className='flexEnd width'>
           <Link href="#" underline="hover" >
             {<Typography variant="h6"  gutterBottom>
               Home
