@@ -9,10 +9,10 @@ import {createMuiTheme, ThemeProvider} from '@mui/material/styles';
 const pTheme = createMuiTheme({
   palette: {
     primary:{
-      main: '#9c77f6'
+      main: '#97A7CF'
     },
     text:{
-      primary: '#9c77f6'
+      primary: '#97A7CF'
     }
   }
 });
