@@ -1,4 +1,4 @@
-import './App.css';
+import './LogIn.css';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
@@ -9,10 +9,10 @@ import {createMuiTheme, ThemeProvider} from '@mui/material/styles';
 const pTheme = createMuiTheme({
   palette: {
     primary:{
-      main: '#9c77f6'
+      main: '#97A7CF'
     },
     text:{
-      primary: '#9c77f6'
+      primary: '#97A7CF'
     }
   }
 });
@@ -29,7 +29,7 @@ const wTheme = createMuiTheme({
 });
 
 
-function App() {
+function LogIn() {
   return (
     <div className="App">
       <header className='flexSpaceBetween'>
@@ -88,7 +88,7 @@ function App() {
           <ThemeProvider theme={pTheme}>
             <TextField required label="First Name" variant="standard" focused />
             <TextField required label="Last Name" variant="standard" focused />
-            <TextField required label="Nickname" variant="standard" focused />
+            <TextField label="Nickname" variant="standard" focused />
             <TextField required label="Email" variant="standard" focused />
             <TextField required label="Password" variant="standard" focused />
 
@@ -108,4 +108,4 @@ function App() {
   );
 }
 
-export default App;
+export default LogIn;
