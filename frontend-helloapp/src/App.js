@@ -28,7 +28,7 @@ function App() {
       <div className='flexContainer flexSpaceAround'>
         <div>
           <Typography variant="h1" className='padding titleColor' gutterBottom>
-            HelloApp-TEST Gra
+            HelloApp
           </Typography>
           <Typography variant="h6" className='padding color-gray' gutterBottom>
             HelloApp offers you the opportunity to connect with friends, family, loved ones and others.
