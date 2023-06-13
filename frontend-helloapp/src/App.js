@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <header className='flexEnd'>
-        <Link href="#" underline="hover" >
+        <Link href="/" underline="hover" >
           {<Typography variant="h6"  gutterBottom>
             Home
           </Typography>}
@@ -20,7 +20,7 @@ function App() {
             About us
           </Typography>}
         </Link>
-        <Link href="#" underline="hover" className='left-padding right-padding'>
+        <Link href="/login" underline="hover" className='left-padding right-padding'>
           {<Typography variant="h6" gutterBottom>
             Login
           </Typography>}        

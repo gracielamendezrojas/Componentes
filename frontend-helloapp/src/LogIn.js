@@ -39,7 +39,7 @@ function LogIn() {
           </Typography>
         </div>
         <div className='flexEnd width'>
-          <Link href="#" underline="hover" >
+          <Link href="/" underline="hover" >
             {<Typography variant="h6"  gutterBottom>
               Home
             </Typography>}
@@ -49,7 +49,7 @@ function LogIn() {
               About us
             </Typography>}
           </Link>
-          <Link href="#" underline="hover" className='left-padding right-padding'>
+          <Link href="/LogIn" underline="hover" className='left-padding right-padding'>
             {<Typography variant="h6" gutterBottom>
               Login
             </Typography>}        
