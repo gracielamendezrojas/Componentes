@@ -4,6 +4,8 @@ import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import {createMuiTheme, ThemeProvider} from '@mui/material/styles';
+import homeImage from "../Images/chatimage.jpg";
+import hiImage from "../Images/HiImage.png";
 
 
 const pTheme = createMuiTheme({
@@ -57,18 +59,21 @@ function Register() {
                 </div>
 
             </header>
-            <div className='flexContainer flexSpaceBetween'>
 
-                <div className = 'flexColumn flexSpaceEvenly dimensions'>
+            <div className='flexContainer flexCenter'>
+                <div className='b-color-purple dimensions'>
+                </div>
+
+                <div className = 'flexColumn flexSpaceEvenly dimensions border'>
 
                     <Typography variant="h5" className='color-purple'>
                         Register
                     </Typography>
-
+                    <img src={hiImage}  className='HiImage' alt="HelloApp Image"/>
                     <ThemeProvider theme={pTheme}>
                         <TextField required label="First Name" variant="standard" focused />
                         <TextField required label="Last Name" variant="standard" focused />
-                        <TextField required label="Nickname" variant="standard" focused />
+                        <TextField  label="Nickname" variant="standard" focused />
                         <TextField required label="Email" variant="standard" focused />
                         <TextField required label="Password" variant="standard" focused />
 
@@ -77,10 +82,10 @@ function Register() {
                                 Register
                             </Typography>
                         </Button>
-
                     </ThemeProvider>
+                </div>
 
-
+                <div className='b-color-purple dimensions'>
                 </div>
 
             </div>

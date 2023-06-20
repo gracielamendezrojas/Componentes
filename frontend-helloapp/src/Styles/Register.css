@@ -5,8 +5,16 @@
     min-height: 100vh;
 }
 
+.HiImage{
+    width: 8%;
+}
+
 .alignItems{
     align-items: center;
+}
+
+.border{
+    border: 10px solid #97A7CF ;
 }
 
 .borderRadius{
@@ -25,9 +33,9 @@
     justify-content: space-around;
 }
 
-.flexSpaceBetween{
+.flexCenter{
     display:flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .flexSpaceEvenly{
@@ -51,7 +59,7 @@
 }
 
 .dimensions{
-    width: 50%;
+    width: 40%;
     min-height: 100vh;
     align-items: center;
 }
