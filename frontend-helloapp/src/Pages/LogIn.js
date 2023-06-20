@@ -49,7 +49,7 @@ function LogIn() {
               About us
             </Typography>}
           </Link>
-          <Link href="/frontend-helloapp/src/Pages/LogIn" underline="hover" className='left-padding right-padding'>
+          <Link href="/login" underline="hover" className='left-padding right-padding'>
             {<Typography variant="h6" gutterBottom>
               Login
             </Typography>}        
@@ -67,6 +67,12 @@ function LogIn() {
           <ThemeProvider theme={wTheme}>
             <TextField required label="Email"  variant="standard" focused />
             <TextField required label="Password" variant="standard" focused />
+
+            <Link href="/register" underline="hover" className='left-padding right-padding'>
+              {<Typography variant="subtitle2" gutterBottom>
+                Don´t have an account? Register Now!
+              </Typography>}
+            </Link>
 
             <Button  variant="contained">
               <Typography variant="h5" className='color-purple'>

@@ -29,7 +29,7 @@ const wTheme = createMuiTheme({
 });
 
 
-function Regsiter() {
+function Register() {
     return (
         <div className="App">
             <header className='flexSpaceBetween'>
@@ -49,7 +49,7 @@ function Regsiter() {
                             About us
                         </Typography>}
                     </Link>
-                    <Link href="/frontend-helloapp/src/Pages/LogIn" underline="hover" className='left-padding right-padding'>
+                    <Link href="/login" underline="hover" className='left-padding right-padding'>
                         {<Typography variant="h6" gutterBottom>
                             Login
                         </Typography>}
@@ -58,26 +58,6 @@ function Regsiter() {
 
             </header>
             <div className='flexContainer flexSpaceBetween'>
-                <div className = 'flexColumn flexSpaceEvenly b-color-purple dimensions borderRadius'>
-
-                    <Typography variant="h5" className='color-white'>
-                        Log in
-                    </Typography>
-
-                    <ThemeProvider theme={wTheme}>
-                        <TextField required label="Email"  variant="standard" focused />
-                        <TextField required label="Password" variant="standard" focused />
-
-                        <Button  variant="contained">
-                            <Typography variant="h5" className='color-purple'>
-                                Log in
-                            </Typography>
-                        </Button>
-
-                    </ThemeProvider>
-
-
-                </div>
 
                 <div className = 'flexColumn flexSpaceEvenly dimensions'>
 
