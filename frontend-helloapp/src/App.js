@@ -20,7 +20,7 @@ function App() {
             About us
           </Typography>}
         </Link>
-        <Link href="/login" underline="hover" className='left-padding right-padding'>
+        <Link href="/Pages/LogIn" underline="hover" className='left-padding right-padding'>
           {<Typography variant="h6" gutterBottom>
             Login
           </Typography>}        

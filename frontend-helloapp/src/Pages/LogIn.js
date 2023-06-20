@@ -1,4 +1,4 @@
-import './LogIn.css';
+import '../Styles/LogIn.css';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
@@ -49,7 +49,7 @@ function LogIn() {
               About us
             </Typography>}
           </Link>
-          <Link href="/login" underline="hover" className='left-padding right-padding'>
+          <Link href="/frontend-helloapp/src/Pages/LogIn" underline="hover" className='left-padding right-padding'>
             {<Typography variant="h6" gutterBottom>
               Login
             </Typography>}        
