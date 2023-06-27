@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import {createMuiTheme, ThemeProvider} from '@mui/material/styles';
+import Header from '../Components/Header'; 
 
 
 const pTheme = createMuiTheme({
@@ -32,31 +33,7 @@ const wTheme = createMuiTheme({
 function LogIn() {
   return (
     <div className="App">
-      <header className='flexSpaceBetween'>
-        <div className='flexStart'>          
-          <Typography variant="h3" className='titleColor' gutterBottom>
-            HelloApp
-          </Typography>
-        </div>
-        <div className='flexEnd width'>
-          <Link href="/" underline="hover" >
-            {<Typography variant="h6"  gutterBottom>
-              Home
-            </Typography>}
-          </Link>
-          <Link href="#" underline="hover" className='left-padding'>
-            {<Typography variant="h6" gutterBottom>
-              About us
-            </Typography>}
-          </Link>
-          <Link href="/login" underline="hover" className='left-padding right-padding'>
-            {<Typography variant="h6" gutterBottom>
-              Login
-            </Typography>}        
-          </Link>
-        </div>
-        
-      </header>
+      <Header/>
       <div className='flexContainer flexSpaceBetween'>
         <div className = 'flexColumn flexSpaceEvenly b-color-purple dimensions borderRadius'>
 

@@ -15,7 +15,7 @@ function App() {
             Home
           </Typography>}
         </Link>
-        <Link href="#" underline="hover" className='left-padding'>
+        <Link href="/aboutus" underline="hover" className='left-padding'>
           {<Typography variant="h6" gutterBottom>
             About us
           </Typography>}
@@ -38,7 +38,7 @@ function App() {
             Now is the time to chat online at no cost!
           </Typography>
           <img src={hiImage}  className='HiImage' alt="HelloApp Image"/>
-          <Button  variant="contained" >          
+          <Button  variant="contained" href="/login" >          
             <Typography variant="h5" gutterBottom>
               Let´s chat!
             </Typography>
