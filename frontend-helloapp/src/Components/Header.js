@@ -1,4 +1,4 @@
-import '../Styles/AboutUs.css';
+import '../Styles/Header.css';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 

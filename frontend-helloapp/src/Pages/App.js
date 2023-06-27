@@ -33,10 +33,10 @@ function App() {
       </header>
       <div className='flexContainer flexSpaceAround'>
         <div>
-          <Typography variant="h1" className='padding titleColor' gutterBottom>
+          <Typography variant="h1" className=' titleColor' gutterBottom>
             HelloApp
           </Typography>
-          <Typography variant="h6" className='padding color-gray' gutterBottom>
+          <Typography variant="h6" className=' color-gray' gutterBottom>
             HelloApp offers you the opportunity to connect with friends, family, loved ones and others.
           </Typography>
           <Typography variant="h3" className='padding color-gray' gutterBottom>
