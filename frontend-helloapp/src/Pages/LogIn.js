@@ -1,4 +1,4 @@
-import './LogIn.css';
+import '../Styles/LogIn.css';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
