@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router,Routes, Route} from 'react-router-dom'
 import LogIn from "./Pages/LogIn";
 import AboutUs from "./Pages/AboutUs";
+import Chat from "./Pages/Chat";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,6 +16,7 @@ root.render(
             <Route path='/' element={<App />}/>
             <Route path='/login' element={<LogIn />}/>
             <Route path='/aboutus' element={<AboutUs />}/>
+            <Route path='/chat' element={<Chat />}/>
 
         </Routes>
     </Router>

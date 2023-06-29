@@ -45,7 +45,7 @@ function LogIn() {
             <TextField required label="Email"  variant="standard" focused />
             <TextField required label="Password" variant="standard" focused />
 
-            <Button  variant="contained">
+            <Button  variant="contained"  href="/chat" >
               <Typography variant="h5" className='color-purple'>
                 Log in
               </Typography>
