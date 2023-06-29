@@ -1,8 +1,8 @@
 const getHolaMundo = async ()=> {
     //test
-   // const url = 'https://www.boredapi.com/api/activity';
+   const url = 'https://www.boredapi.com/api/activity';
 
-    const url = 'http://3.15.28.205/hola-mundo';
+    //const url = 'http://3.15.28.205/hola-mundo';
     const response =  await fetch(url,  {
         method: 'GET',
         headers: new Headers({ 'Content-type': 'application/json' })
