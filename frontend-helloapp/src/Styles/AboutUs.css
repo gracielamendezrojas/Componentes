@@ -6,16 +6,79 @@
 .HiImage{
   width: 30%;
 }
+.b-color-purple{
+  background-color: #97A7CF;
+}
 
+.b-color-gray{
+  background-color: #D3D8DE;
+}
+.b-color-pink{
+  background-color: #fd4f9f;
+}
+.b-color-white{
+  background-color: white;
+}
+.borderRadius{
+  border-radius: 3%;
+}
 
+.color-white{
+  color: white; 
+}
+.flex{
+  display:flex; 
+}
 
+.flex_center{
+  justify-content: space-evenly;
+}
 
+.padding{
+  padding: 2%;
+}
 
+.padding10{
+  padding: 10%;
+}
+.cellphoneImage{
+  width: 50%;
+}
 
+.text_aboutUs{
+  position: absolute;
+  top: 205px;
+  left: 55px;
+}
 
+.gap{
+  gap: 10px; 
+}
 
+.bigger_gap{
+  gap: 100px; 
+}
 
+.color-gray{
+  color:#666666;
+}
 
+.text_team{
+  position: absolute;
+  top: 1335px;
+  left: 1000px;
+}
+
+.color-purple{
+  color: #97A7CF;
+}
+
+.circle {
+  background:  #fd4f9f;
+  border-radius: 50%;
+  width: 250px;
+  height: 100px;
+}
 
 
 
@@ -31,16 +94,9 @@
   align-items: center;
 }
 
-.borderRadius{
-border-radius: 3%;
-}
 
-.flexEnd{
-  display:flex; 
-  justify-content: flex-end;
-  display:flex; 
-  align-items: center;
-}
+
+
 
 .flexSpaceAround{
   display:flex; 
@@ -82,9 +138,6 @@ border-radius: 3%;
   width: 50%;
 }
 
-.padding{
-  padding: 10%;
-}
 
 .left-padding{
   padding-left: 2%;
@@ -102,10 +155,5 @@ border-radius: 3%;
   color: #ffffff;
 }
 
-.b-color-purple{
-  background-color: #97A7CF;
-}
 
-.color-purple{
-  color: #97A7CF;
-}
+
