@@ -1,4 +1,6 @@
-import React from 'react'; 
+import '../Styles/Chat.css';
+import Sidebar from '../Components/Sidebar';
+import ChatC from '../Components/ChatC';
 import {createMuiTheme, ThemeProvider} from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
@@ -14,25 +16,24 @@ const pTheme = createMuiTheme({
   });
   
 
+function Chat() {
+  return (
 
-const Navbar = () => {
-    return (
-        <div className='navbar'>
-            <span className='logo'>HelloApp</span>
-            <div className='user'> 
-                <img src='' alt=''/>
-                <span> USER_NAME_CHANGE </span>
-                <ThemeProvider theme={pTheme}>
-                    <Button  variant="contained" >
+    <div className='chat'>
+          <ThemeProvider theme={pTheme}>
+                    <Button className='button' variant="contained" >
                         <Typography variant="h5" className='color-white' >
                             Log out
                         </Typography>
                     </Button>
                 </ThemeProvider>
+      <div className='container'>
+        <Sidebar/>
+        <ChatC/>
 
-            </div>
-        </div>
-    )
+      </div>
+    </div>
+  );
 }
 
-export default Navbar
+export default Chat;

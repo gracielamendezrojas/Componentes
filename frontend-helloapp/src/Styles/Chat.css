@@ -1,3 +1,8 @@
+.button{
+    position: absolute;
+    top: 2px;
+    left: 10px;
+}
 .chat{
     background-color: #D3D8DE;
     height: 100vh;
@@ -15,11 +20,86 @@
         
         .sidebar{
             flex:1; 
-            border-right: 1px solid #97A7CF;
             background-color: white ;
+            
+            .navbar{
+                display:flex; 
+                align-items: center;
+                background-color: #415179;
+                height: 50px;
+                padding: 10px;
+                justify-content: space-between;
+
+                .logo{
+                    font-weight: bold;
+                    color: #fd4f9f; 
+                }
+
+                .user{
+                    display:flex; 
+                    gap:10px; 
+
+                   
+            
+                }
+                .imgChat {
+                    background-color: #ddddf7;
+                    height: 24px;
+                    width: 24px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+                
+            } 
+        }
+
+        .search{
+            border-bottom: 1px solid gray;
+            .searchForm{
+                padding: 10px;
+
+                input{
+                    background-color: transparent;
+                    border: none; 
+                    color: white; 
+                    outline: none;
+                }
+            }
+
+            .userChat{
+                padding: 10px; 
+                display: flex; 
+                align-items: center;
+                gap:10px; 
+                color: #666666; 
+                cursor: pointer; 
+            }
+
+            &:hover{
+                background-color: #c0c1c4;
+                color:white; 
+            }
+
+            .imgChat{
+                width: 50px; 
+                width: 50px;
+                border-radius: 50%;
+                object-fit: cover;
+             }
         }
         .chatC{
             flex: 2; 
+        }
+
+        .chats{
+            color: #666666; 
+
+            .imgChat{
+                width: 50px; 
+                width: 50px;
+                border-radius: 50%;
+                object-fit: cover;
+             }
         }
     }
 }
