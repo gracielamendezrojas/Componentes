@@ -1,8 +1,5 @@
 const getHolaMundo = async ()=> {
-    //test
-   const url = 'https://www.boredapi.com/api/activity';
-
-    //const url = 'http://3.15.28.205/hola-mundo';
+    const url = 'http://3.19.219.97/hola-mundo';
     const response =  await fetch(url,  {
         method: 'GET',
         headers: new Headers({ 'Content-type': 'application/json' })
@@ -11,23 +8,6 @@ const getHolaMundo = async ()=> {
     console.log(response); 
     const jsonData = await response.json();
     console.log(jsonData); 
-     
-    /** 
-    .then((res)=>{
-        console.log(res);
-
-        return res.text();
-    })
-    .then((data)=>{
-        console.log(data);
-        return new Promise((resolve, reject)=>{
-            resolve(data ? JSON.parse(data) : {})
-        })
-    })
-    */
-
-    //const jsonData = await response.json();
-    //console.log(jsonData);
 }
 
 export default getHolaMundo; 
