@@ -58,7 +58,7 @@
             .searchForm{
                 padding: 10px;
 
-                input{
+                .input{
                     background-color: transparent;
                     border: none; 
                     color: white; 
@@ -86,9 +86,29 @@
                 border-radius: 50%;
                 object-fit: cover;
              }
+
         }
         .chatC{
             flex: 2; 
+            .chatInfo{
+                height: 50px;
+                background-color: #97A7CF;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px;
+                color: #666666;
+            }
+            
+            .chatIcons{
+                display: flex;
+                gap: 10px; 
+
+                .img{
+                    height: 24px;
+                    cursor: pointer;
+                }
+            }
         }
 
         .chats{
@@ -100,6 +120,23 @@
                 border-radius: 50%;
                 object-fit: cover;
              }
+
+             .userChatInfo{
+
+                span{
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+                p{
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .messages{
+            background-color: #d4ddf3;
+            padding: 10px;
         }
     }
 }

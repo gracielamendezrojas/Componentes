@@ -2,7 +2,7 @@ import React from 'react'
 
 const InputPanel = () => {
     return (
-        <div></div>
+        <div>Input</div>
     )
 }
 
