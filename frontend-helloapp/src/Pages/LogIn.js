@@ -1,24 +1,15 @@
 import '../Styles/LogIn.css';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
-import {createMuiTheme, ThemeProvider} from '@mui/material/styles';
-import Header from '../Components/Header'; 
+import {createTheme, ThemeProvider} from '@mui/material/styles';
+import Header from '../Components/Header';
+import {useForm} from "react-hook-form";
+import {useState} from "react";
+import {Stack} from "@mui/material";
+import {getUserByEmailAndPassword} from "../Services/userService";
 
-
-const pTheme = createMuiTheme({
-  palette: {
-    primary:{
-      main: '#97A7CF'
-    },
-    text:{
-      primary: '#97A7CF'
-    }
-  }
-});
-
-const wTheme = createMuiTheme({
+const wTheme = createTheme({
   palette: {
     primary:{
       main: '#ffffff'
@@ -29,60 +20,70 @@ const wTheme = createMuiTheme({
   }
 });
 
+export default function LogIn () {
+  const {register, handleSubmit, formState : {errors, isValid}} = useForm({mode: 'onChange'});
 
-function LogIn() {
-  return (
+
+  const formSubmitLogIn = async (data: any) => {
+
+    if(isValid) {
+      const logInResponse = await getUserByEmailAndPassword(data.email, data.password);
+       if(logInResponse.token){
+          document.cookie = `token=${logInResponse.token}`
+         alert("main module")
+       }else{
+         alert("user does not exist")
+       }
+    }
+
+  }
+
+  return <>
     <div className="App">
-      <Header/>
-      <div className='flexContainer flexSpaceBetween'>
-        <div className = 'flexColumn flexSpaceEvenly b-color-purple dimensions borderRadius'>
-
+      <Header></Header>
+        <div className={"cont-main"}>
+          <div className={"cont"}>
           <Typography variant="h5" className='color-white'>
             Log in
           </Typography>
+          </div>
+          <form onSubmit={handleSubmit(formSubmitLogIn)}>
+            <div className={"cont-login"}>
+              <ThemeProvider theme={wTheme}>
+                <Stack className={"cont-text"} spacing={5}>
+                <TextField
+                    id="email"
+                    required label="Email"
+                    variant="standard" focused
+                    {...register("email", {required:true})}
+                    error={!!errors.email}
+                    helperText={errors.email && "this field is required!"}
+                />
+                <TextField
+                    id="password"
+                    required label="Password"
+                    variant="standard" focused
+                    {...register("password", {required:true})}
+                    error={!!errors.password}
+                    helperText={errors.password && "this field is required!"}
+                />
 
-          <ThemeProvider theme={wTheme}>
-            <TextField required label="Email"  variant="standard" focused />
-            <TextField required label="Password" variant="standard" focused />
+                </Stack>
 
-            <Button  variant="contained"  href="/chat" >
+              </ThemeProvider>
+
+            </div>
+
+            <ThemeProvider theme={wTheme}>
+            <Button  variant="contained"  type={"submit"}>
               <Typography variant="h5" className='color-purple'>
                 Log in
               </Typography>
             </Button>
-
-          </ThemeProvider>
-
-
+            </ThemeProvider>
+          </form>
         </div>
 
-        <div className = 'flexColumn flexSpaceEvenly dimensions'>
-
-          <Typography variant="h5" className='color-purple'>
-            Register
-          </Typography>
-
-          <ThemeProvider theme={pTheme}>
-            <TextField required label="First Name" variant="standard" focused />
-            <TextField required label="Last Name" variant="standard" focused />
-            <TextField required label="Nickname" variant="standard" focused />
-            <TextField required label="Email" variant="standard" focused />
-            <TextField required label="Password" variant="standard" focused />
-
-            <Button  variant="contained" >
-              <Typography variant="h5" className='color-white' >
-                Register
-              </Typography>
-            </Button>
-
-          </ThemeProvider>
-
-
-        </div>
-
-      </div>
     </div>
-  );
+  </>
 }
-
-export default LogIn;
