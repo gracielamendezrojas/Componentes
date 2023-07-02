@@ -18,11 +18,17 @@ const pTheme = createMuiTheme({
   
 
 function Chat() {
+  const logout = (event) =>
+  {
+    event.preventDefault(); 
+    document.cookie = 'token' + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    //alert("cookie deleted")
+  }
   return (
 
     <div className='chat'>
           <ThemeProvider theme={pTheme}>
-                    <Button className='button' variant="contained" >
+                    <Button className='button' onClick={logout} variant="contained" >
                         <Typography variant="h5" className='color-white' >
                             Log out
                         </Typography>
