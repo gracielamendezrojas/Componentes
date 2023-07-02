@@ -6,6 +6,9 @@ import TextField from '@mui/material/TextField';
 import {createMuiTheme, ThemeProvider} from '@mui/material/styles';
 import homeImage from "../Images/chatimage.jpg";
 import hiImage from "../Images/HiImage.png";
+import {useForm} from "react-hook-form";
+import {getUserByEmailAndPassword, setUser} from "../Services/userService";
+import Header from "../Components/Header";
 
 
 const pTheme = createMuiTheme({
@@ -31,66 +34,90 @@ const wTheme = createMuiTheme({
 });
 
 
-function Register() {
-    return (
+export default function Register() {
+    const {register, handleSubmit, formState : {errors, isValid}} = useForm({mode: 'onChange'});
+
+    const formSubmitRegister = async (data: any) => {
+        if(isValid) {
+            const RegisterResponse = await setUser(data);
+            if(RegisterResponse){
+                alert("main module")
+            }else{
+                alert("couldn´t register")
+            }
+        }
+    }
+
+    return <>
         <div className="App">
-            <header className='flexSpaceBetween'>
-                <div className='flexStart'>
-                    <Typography variant="h3" className='titleColor' gutterBottom>
-                        HelloApp
-                    </Typography>
-                </div>
-                <div className='flexEnd width'>
-                    <Link href="/" underline="hover" >
-                        {<Typography variant="h6"  gutterBottom>
-                            Home
-                        </Typography>}
-                    </Link>
-                    <Link href="#" underline="hover" className='left-padding'>
-                        {<Typography variant="h6" gutterBottom>
-                            About us
-                        </Typography>}
-                    </Link>
-                    <Link href="/login" underline="hover" className='left-padding right-padding'>
-                        {<Typography variant="h6" gutterBottom>
-                            Login
-                        </Typography>}
-                    </Link>
-                </div>
+            <Header>
+            </Header>
 
-            </header>
-
-            <div className='flexContainer flexCenter'>
+            <form onSubmit={handleSubmit(formSubmitRegister)} className='flexContainer flexCenter'>
                 <div className='b-color-purple dimensions'>
                 </div>
 
                 <div className = 'flexColumn flexSpaceEvenly dimensions border'>
 
-                    <Typography variant="h5" className='color-purple'>
-                        Register
-                    </Typography>
-                    <img src={hiImage}  className='HiImage' alt="HelloApp Image"/>
-                    <ThemeProvider theme={pTheme}>
-                        <TextField required label="First Name" variant="standard" focused />
-                        <TextField required label="Last Name" variant="standard" focused />
-                        <TextField  label="Nickname" variant="standard" focused />
-                        <TextField required label="Email" variant="standard" focused />
-                        <TextField required label="Password" variant="standard" focused />
+                        <Typography variant="h5" className='color-purple'>
+                            Register
+                        </Typography>
+                        <img src={hiImage}  className='HiImage' alt="HelloApp Image"/>
+                        <ThemeProvider theme={pTheme}>
+                            <TextField
+                                id="firstname"
+                                required label="First Name"
+                                variant="standard"  focused
+                                {...register("firstname", {required:true})}
+                                error={!!errors.fname}
+                                helperText={errors.fname && "this field is required!"}
+                            />
 
-                        <Button  variant="contained" >
-                            <Typography variant="h5" className='color-white' >
-                                Register
-                            </Typography>
-                        </Button>
-                    </ThemeProvider>
+                            <TextField
+                                id="lastname"
+                                required label="Last Name"
+                                variant="standard"  focused
+                                {...register("lastname", {required:true})}
+                                error={!!errors.lname}
+                                helperText={errors.lname && "this field is required!"}
+                            />
+
+                            <TextField
+                                id="nickname"
+                                label="Nickname"
+                                variant="standard" focused
+                                {...register("nickname", {required:false})}
+                            />
+
+                            <TextField
+                                id="email"
+                                required label="email"
+                                variant="standard" focused
+                                {...register("email", {required:true})}
+                                error={!!errors.email}
+                                helperText={errors.email && "this field is required!"}
+                            />
+
+                            <TextField
+                                id="password"
+                                required label="Password"
+                                variant="standard" focused
+                                {...register("password", {required:true})}
+                                error={!!errors.password}
+                                helperText={errors.password && "this field is required!"}
+                            />
+
+                            <Button  variant="contained" type={"submit"}>
+                                <Typography variant="h5" className='color-white' >
+                                    Register
+                                </Typography>
+                            </Button>
+                        </ThemeProvider>
                 </div>
 
                 <div className='b-color-purple dimensions'>
                 </div>
-
-            </div>
+            </form>
         </div>
-    );
+    </>
 }
-
-export default Register;

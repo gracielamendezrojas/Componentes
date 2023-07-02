@@ -1,5 +1,5 @@
 const getHolaMundo = async ()=> {
-    const url = 'http://3.19.219.97/hola-mundo';
+    const url = 'http://3.144.102.187/hola-mundo';
     const token = localStorage.getItem("token")
     const response =  await fetch(url,  {
         method: 'GET',
