@@ -5,6 +5,7 @@ import App from './Pages/App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router,Routes, Route} from 'react-router-dom'
 import LogIn from "./Pages/LogIn";
+import Register from  "./Pages/Register"
 import AboutUs from "./Pages/AboutUs";
 import Chat from "./Pages/Chat";
 
@@ -17,12 +18,10 @@ root.render(
             <Route path='/login' element={<LogIn />}/>
             <Route path='/aboutus' element={<AboutUs />}/>
             <Route path='/chat' element={<Chat />}/>
+            <Route path='/register' element={<Register />}/>
 
         </Routes>
     </Router>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
