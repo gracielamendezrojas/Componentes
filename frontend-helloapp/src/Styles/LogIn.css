@@ -1,8 +1,5 @@
 .App {
   text-align: center;
-  padding: 1%;
-  width: 100%;
-  min-height: 100vh;
 }
 
 .alignItems{
@@ -14,8 +11,6 @@ border-radius: 3%;
 }
 
 .flexEnd{
-  display:flex; 
-  justify-content: flex-end;
   display:flex; 
   align-items: center;
 }
@@ -41,8 +36,19 @@ border-radius: 3%;
 }
 
 .flexColumn{
-  display:flex; 
+  display:flex;
   flex-direction: column ;
+}
+
+.cont-main{
+  display:flex;
+  flex-direction: column ;
+  background-color:  #94accc;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  border-radius: 3%;
+
 }
 
 .flexStart{
@@ -51,13 +57,13 @@ border-radius: 3%;
 }
 
 .dimensions{
-  width: 50%;
-  min-height: 100vh;
+  width: 100%;
   align-items: center;
 }
 
 .width{
-  width: 50%;
+  width: 47%;
+
 }
 
 .padding{
@@ -86,4 +92,27 @@ border-radius: 3%;
 
 .color-purple{
   color: #97A7CF;
+}
+
+.cont-login{
+  height: 200px;
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+
+
+}
+
+.cont-txt{
+  margin-left: 40px;
+}
+
+.cont-title{
+
+}
+
+.cont{
+  padding-top: 150px;
+  width: 70%;
+ justify-content: space-evenly;
 }

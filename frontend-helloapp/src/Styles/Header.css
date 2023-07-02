@@ -1,0 +1,37 @@
+
+.flexSpaceBetween{
+    display:flex; 
+    justify-content: space-between;
+  }
+
+  .App {
+    text-align: center;
+  }
+  
+
+  .flexStart{
+    display:flex; 
+    align-items: flex-start;
+  }
+  
+
+  .titleColor{
+    color: #fd4f9f; 
+  }
+  
+
+  .width{
+    width: 50%;
+  }
+
+  .flexEnd{
+    display:flex; 
+    align-items: center;
+  }
+  .left-padding{
+    padding-left: 2%;
+  }
+  
+  .right-padding{
+    padding-right: 8%;
+  }

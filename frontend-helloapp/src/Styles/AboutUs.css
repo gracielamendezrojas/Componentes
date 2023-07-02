@@ -1,0 +1,93 @@
+.App {
+  text-align: center;
+  width: 100%;
+}
+
+.HiImage{
+  width: 30%;
+}
+.b-color-purple{
+  background-color: #97A7CF;
+}
+
+.b-color-gray{
+  background-color: #D3D8DE;
+}
+.b-color-pink{
+  background-color: #fd4f9f;
+}
+.b-color-white{
+  background-color: white;
+}
+.borderRadius{
+  border-radius: 3%;
+}
+
+.color-white{
+  color: white; 
+}
+.flex{
+  display:flex; 
+}
+
+.flex_center{
+  justify-content: space-evenly;
+}
+
+.padding{
+  padding: 2%;
+}
+
+.padding10{
+  padding: 10%;
+}
+.cellphoneImage{
+  width: 50%;
+}
+
+.text_aboutUs{
+  position: absolute;
+  top: 205px;
+  left: 55px;
+}
+
+.gap{
+  gap: 50px; 
+}
+
+.bigger_gap{
+  gap: 100px; 
+}
+
+.color-gray{
+  color:#666666;
+}
+
+.text_team{
+  position: absolute;
+  top: -295px;
+  left:-65px;
+}
+
+.color-purple{
+  color: #97A7CF;
+}
+
+.circle {
+  background:  #fd4f9f;
+  border-radius: 50%;
+  width: 250px;
+  height: 100px;
+}
+
+
+.dimensions{
+  width: 50%;
+  min-height: 100vh;
+  align-items: center;
+}
+
+
+
+
+
