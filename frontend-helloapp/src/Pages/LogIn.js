@@ -8,6 +8,7 @@ import {useForm} from "react-hook-form";
 import {useState} from "react";
 import {Stack} from "@mui/material";
 import {getUserByEmailAndPassword} from "../Services/userService";
+import Link from "@mui/material/Link";
 
 const wTheme = createTheme({
   palette: {
@@ -43,9 +44,9 @@ export default function LogIn () {
       <Header></Header>
         <div className={"cont-main"}>
           <div className={"cont"}>
-          <Typography variant="h5" className='color-white'>
+            <Typography variant="h5" className='color-white'>
             Log in
-          </Typography>
+            </Typography>
           </div>
           <form onSubmit={handleSubmit(formSubmitLogIn)}>
             <div className={"cont-login"}>
@@ -73,6 +74,12 @@ export default function LogIn () {
               </ThemeProvider>
 
             </div>
+
+            <Link href="/register" underline="hover" >
+              {<Typography variant="h6"  className='color-white'>
+                Don´t have an account? Register here
+              </Typography>}
+            </Link>
 
             <ThemeProvider theme={wTheme}>
             <Button  variant="contained"  type={"submit"}>

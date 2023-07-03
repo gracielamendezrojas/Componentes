@@ -4,7 +4,7 @@ import Link from '@mui/material/Link';
 
 function Header() {
     return (
-      <div className="App">
+      <div>
         <header className="flexSpaceBetween">
           <div className='flexStart'>          
             <Typography variant="h3" className='titleColor' gutterBottom>
@@ -28,7 +28,7 @@ function Header() {
               </Typography>}        
             </Link>
           </div>
-          
+
         </header>
        
       </div>

@@ -1,0 +1,97 @@
+.App {
+    text-align: center;
+    padding: 1%;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.HiImage{
+    width: 8%;
+}
+
+.alignItems{
+    align-items: center;
+}
+
+.border{
+    border: 10px solid #97A7CF ;
+}
+
+.borderRadius{
+    border-radius: 3%;
+}
+
+.flexEnd{
+    display:flex;
+    justify-content: flex-end;
+    display:flex;
+    align-items: center;
+}
+
+.flexSpaceAround{
+    display:flex;
+    justify-content: space-around;
+}
+
+.flexCenter{
+    display:flex;
+    justify-content: center;
+}
+
+.flexSpaceEvenly{
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.flexContainer{
+    display:flex;
+    flex-basis: auto;
+}
+
+.flexColumn{
+    display:flex;
+    flex-direction: column ;
+}
+
+.flexStart{
+    display:flex;
+    align-items: flex-start;
+}
+
+.dimensions{
+    width: 40%;
+    min-height: 100vh;
+    align-items: center;
+}
+
+.width{
+    width: 50%;
+}
+
+.padding{
+    padding: 10%;
+}
+
+.left-padding{
+    padding-left: 2%;
+}
+
+.right-padding{
+    padding-right: 8%;
+}
+
+.titleColor{
+    color: #fd4f9f;
+}
+
+.color-white{
+    color: #ffffff;
+}
+
+.b-color-purple{
+    background-color: #97A7CF;
+}
+
+.color-purple{
+    color: #97A7CF;
+}
