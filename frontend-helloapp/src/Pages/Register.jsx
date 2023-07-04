@@ -22,16 +22,7 @@ const pTheme = createMuiTheme({
     }
 });
 
-const wTheme = createMuiTheme({
-    palette: {
-        primary:{
-            main: '#ffffff'
-        },
-        text:{
-            primary: '#ffffff'
-        }
-    }
-});
+
 
 
 export default function Register() {
@@ -50,19 +41,18 @@ export default function Register() {
 
     return <>
         <div className="App">
-            <Header>
-            </Header>
+            <Header/>
 
-            <form onSubmit={handleSubmit(formSubmitRegister)} className='flexContainer flexCenter'>
+            <form onSubmit={handleSubmit(formSubmitRegister)} className='flexContainer flexCenter b-color-purple padding'>
                 <div className='b-color-purple dimensions'>
                 </div>
 
-                <div className = 'flexColumn flexSpaceEvenly dimensions border'>
+                <div className = 'flexColumn flexSpaceEvenly dimensions  borderRadius b-color-white'>
 
                         <Typography variant="h5" className='color-purple'>
                             Register
                         </Typography>
-                        <img src={hiImage}  className='HiImage' alt="HelloApp Image"/>
+                        <img src={hiImage}  className='HiImageR' alt="HelloApp Image"/>
                         <ThemeProvider theme={pTheme}>
                             <TextField
                                 id="firstname"
@@ -114,9 +104,7 @@ export default function Register() {
                             </Button>
                         </ThemeProvider>
                 </div>
-
-                <div className='b-color-purple dimensions'>
-                </div>
+                <div className='b-color-purple dimensions'></div>
             </form>
         </div>
     </>

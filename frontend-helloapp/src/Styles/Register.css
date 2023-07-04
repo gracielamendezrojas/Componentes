@@ -1,24 +1,20 @@
 .App {
     text-align: center;
-    padding: 1%;
     width: 100%;
     min-height: 100vh;
 }
 
-.HiImage{
-    width: 8%;
+.HiImageR{
+    width: 120px;
 }
 
 .alignItems{
     align-items: center;
 }
 
-.border{
-    border: 10px solid #97A7CF ;
-}
 
 .borderRadius{
-    border-radius: 3%;
+    border-radius: 10%;
 }
 
 .flexEnd{
@@ -69,7 +65,7 @@
 }
 
 .padding{
-    padding: 10%;
+    padding: 3%;
 }
 
 .left-padding{
@@ -92,6 +88,9 @@
     background-color: #97A7CF;
 }
 
+.b-color-white{
+    background-color: white;
+}
 .color-purple{
     color: #97A7CF;
 }

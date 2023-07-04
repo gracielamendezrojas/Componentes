@@ -25,6 +25,11 @@ function App() {
             About us
           </Typography>}
         </Link>
+        <Link href="/register" underline="hover" className='left-padding'>
+          {<Typography variant="h6" gutterBottom>
+            Register
+          </Typography>}        
+        </Link>
         <Link href="/login" underline="hover" className='left-padding right-padding'>
           {<Typography variant="h6" gutterBottom>
             Login

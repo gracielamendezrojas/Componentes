@@ -40,15 +40,18 @@ border-radius: 3%;
   flex-direction: column ;
 }
 
+.size{
+  width: 100%;
+}
 .cont-main{
   display:flex;
   flex-direction: column ;
-  background-color:  #94accc;
-  width: 100%;
-  height: 100vh;
+  background-color: white;
+  width: 33.3%;
   align-items: center;
   border-radius: 3%;
-
+  color:#97A7CF; 
+  padding-top: 5px;
 }
 
 .flexStart{
@@ -66,8 +69,10 @@ border-radius: 3%;
 
 }
 
-.padding{
-  padding: 10%;
+.margin{
+  margin-top: 10%;
+  margin-bottom: 10%;
+
 }
 
 .left-padding{
@@ -95,24 +100,27 @@ border-radius: 3%;
 }
 
 .cont-login{
-  height: 200px;
   padding-top: 50px;
   display: flex;
   justify-content: center;
-
-
 }
 
 .cont-txt{
   margin-left: 40px;
 }
 
-.cont-title{
-
+.HiImageL{
+  width: 120px;
 }
 
 .cont{
-  padding-top: 150px;
+  padding-top: 20px;
   width: 70%;
- justify-content: space-evenly;
+  justify-content: space-evenly;
+  padding-bottom: 20px;
+}
+
+.padd{
+  padding-top: 3%;
+  padding-bottom: 10%;
 }

@@ -2,24 +2,28 @@ import '../Styles/LogIn.css';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
-import {createTheme, ThemeProvider} from '@mui/material/styles';
+import {createMuiTheme, ThemeProvider} from '@mui/material/styles';
 import Header from '../Components/Header';
 import {useForm} from "react-hook-form";
 import {useState} from "react";
 import {Stack} from "@mui/material";
 import {getUserByEmailAndPassword} from "../Services/userService";
 import Link from "@mui/material/Link";
+import hiImage from "../Images/HiImage.png";
 
-const wTheme = createTheme({
+
+const pTheme = createMuiTheme({
   palette: {
-    primary:{
-      main: '#ffffff'
-    },
-    text:{
-      primary: '#ffffff'
-    }
+      primary:{
+          main: '#97A7CF'
+      },
+      text:{
+          primary: '#97A7CF'
+      }
   }
 });
+
+
 
 export default function LogIn () {
   const {register, handleSubmit, formState : {errors, isValid}} = useForm({mode: 'onChange'});
@@ -41,16 +45,18 @@ export default function LogIn () {
 
   return <>
     <div className="App">
-      <Header></Header>
+      <Header/>
+      <form className='flexContainer flexCenter b-color-purple padd size' onSubmit={handleSubmit(formSubmitLogIn)}>
+    
         <div className={"cont-main"}>
           <div className={"cont"}>
-            <Typography variant="h5" className='color-white'>
-            Log in
-            </Typography>
-          </div>
-          <form onSubmit={handleSubmit(formSubmitLogIn)}>
-            <div className={"cont-login"}>
-              <ThemeProvider theme={wTheme}>
+            <div className='margin'> 
+              <Typography variant="h5" className='color-purple padding'>
+                Login 
+              </Typography>
+            </div>
+            <img src={hiImage}  className='HiImageL' alt="HelloApp Image"/>
+              <ThemeProvider theme={pTheme}>
                 <Stack className={"cont-text"} spacing={5}>
                 <TextField
                     id="email"
@@ -68,29 +74,31 @@ export default function LogIn () {
                     error={!!errors.password}
                     helperText={errors.password && "this field is required!"}
                 />
-
                 </Stack>
-
               </ThemeProvider>
 
             </div>
 
             <Link href="/register" underline="hover" >
-              {<Typography variant="h6"  className='color-white'>
+              {<Typography variant="h6"  className='color-purple '>
                 Don´t have an account? Register here
               </Typography>}
             </Link>
+            <div className='margin'>
+              <ThemeProvider theme={pTheme}>
+              <Button  variant="contained"  type={"submit"} >
+                <Typography variant="h5" className='color-white '>
+                  Log in
+                </Typography>
+              </Button>
+              </ThemeProvider>
+            </div>
 
-            <ThemeProvider theme={wTheme}>
-            <Button  variant="contained"  type={"submit"}>
-              <Typography variant="h5" className='color-purple'>
-                Log in
-              </Typography>
-            </Button>
-            </ThemeProvider>
-          </form>
         </div>
+        </form>
 
     </div>
   </>
 }
+
+
