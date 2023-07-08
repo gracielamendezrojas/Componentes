@@ -32,7 +32,8 @@ export default function Register() {
         if(isValid) {
             const RegisterResponse = await setUser(data);
             if(RegisterResponse){
-                alert("main module")
+                //alert("main module"); 
+                window.location.href = "/login"; 
             }else{
                 alert("couldn´t register")
             }
