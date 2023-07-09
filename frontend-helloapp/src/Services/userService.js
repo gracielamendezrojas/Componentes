@@ -13,7 +13,7 @@ export const getUserByEmailAndPassword = async (email, password)=> {
 };
 
 
-export const register = async (name, lastname, nickname, email, password)=> {
+export const registerUser = async (name, lastname, nickname, email, password)=> {
     const response =  await fetch(`${ip}/register`,  {
         method: 'POST',
         headers: new Headers({ 'Content-type': 'application/json' }),

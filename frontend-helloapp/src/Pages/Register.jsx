@@ -1,13 +1,11 @@
 import '../Styles/Register.css';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import {createMuiTheme, ThemeProvider} from '@mui/material/styles';
-import homeImage from "../Images/chatimage.jpg";
 import hiImage from "../Images/HiImage.png";
 import {useForm} from "react-hook-form";
-import {getUserByEmailAndPassword, register} from "../Services/userService";
+import {registerUser} from "../Services/userService";
 import Header from "../Components/Header";
 
 
@@ -30,12 +28,10 @@ export default function Register() {
 
     const formSubmitRegister = async (data: any) => {
         if(isValid) {
-            const RegisterResponse = await register(data.name, data.lastName, data.nickName, data.email, data.password);
+            const RegisterResponse = await registerUser(data.name, data.lastName, data.nickName, data.email, data.password);
             if(RegisterResponse){
-                //alert("main module"); 
+                alert("register successful");
                 window.location.href = "/login"; 
-            }else{
-                alert("couldn´t register")
             }
         }
     }
