@@ -35,7 +35,7 @@ export default function LogIn () {
       const logInResponse = await getUserByEmailAndPassword(data.email, data.password);
        if(logInResponse.token){
           document.cookie = `token=${logInResponse.token}`; 
-          alert("main module"); 
+          //alert("main module"); 
           window.location.href = "/chat"; 
        }else{
          alert("user does not exist"); 
