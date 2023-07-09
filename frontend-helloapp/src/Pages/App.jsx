@@ -1,17 +1,13 @@
-
 import '../Styles/App.css';
 import Button from '@mui/material/Button';
 import homeImage from "../Images/chatimage.jpg";
 import hiImage from "../Images/HiImage.png";
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
-import getHolaMundo from '../Services/BackendAPI';
-import { useEffect } from 'react';
+
 
 function App() {
-  useEffect(() => {
-    getHolaMundo(); 
-  }, []);
+
   return (
     <div className="App">
       <header className='flexEnd'>

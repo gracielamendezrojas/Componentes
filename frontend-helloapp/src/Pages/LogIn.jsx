@@ -5,7 +5,6 @@ import TextField from '@mui/material/TextField';
 import {createMuiTheme, ThemeProvider} from '@mui/material/styles';
 import Header from '../Components/Header';
 import {useForm} from "react-hook-form";
-import {useState} from "react";
 import {Stack} from "@mui/material";
 import {getUserByEmailAndPassword} from "../Services/userService";
 import Link from "@mui/material/Link";
@@ -23,8 +22,6 @@ const pTheme = createMuiTheme({
   }
 });
 
-
-
 export default function LogIn () {
   const {register, handleSubmit, formState : {errors, isValid}} = useForm({mode: 'onChange'});
 
@@ -34,8 +31,7 @@ export default function LogIn () {
     if(isValid) {
       const logInResponse = await getUserByEmailAndPassword(data.email, data.password);
        if(logInResponse.token){
-          document.cookie = `token=${logInResponse.token}`; 
-          //alert("main module"); 
+          document.cookie = `token=${logInResponse.token}`;
           window.location.href = "/chat"; 
        }else{
          alert("user does not exist"); 
@@ -48,7 +44,6 @@ export default function LogIn () {
     <div className="App">
       <Header/>
       <form className='flexContainer flexCenter b-color-purple padd size' onSubmit={handleSubmit(formSubmitLogIn)}>
-    
         <div className={"cont-main"}>
           <div className={"cont"}>
             <div className='margin'> 
@@ -97,7 +92,6 @@ export default function LogIn () {
 
         </div>
         </form>
-
     </div>
   </>
 }
