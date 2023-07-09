@@ -1,4 +1,4 @@
-export const ip = "http://3.22.167.93";
+export const ip = "http://3.21.34.114";
 //export const ip = "http://localhost:5001";
 
 
@@ -13,10 +13,17 @@ export const getUserByEmailAndPassword = async (email, password)=> {
 };
 
 
-export const setUser = async (firstname, lastname, nickname, email, password)=> {
-    const response =  await fetch(`${ip}/register?name=${firstname}&lastname=${lastname}&nickname=${nickname}&email=${email}&password=${password}`,  {
+export const register = async (name, lastname, nickname, email, password)=> {
+    const response =  await fetch(`${ip}/register`,  {
         method: 'POST',
-        headers: new Headers({ 'Content-type': 'application/json' })
+        headers: new Headers({ 'Content-type': 'application/json' }),
+        body: {
+            name: name,
+            lastName: lastname,
+            nickName: nickname,
+            email: email,
+            password: password
+        }
 
     })
 

@@ -7,7 +7,7 @@ import {createMuiTheme, ThemeProvider} from '@mui/material/styles';
 import homeImage from "../Images/chatimage.jpg";
 import hiImage from "../Images/HiImage.png";
 import {useForm} from "react-hook-form";
-import {getUserByEmailAndPassword, setUser} from "../Services/userService";
+import {getUserByEmailAndPassword, register} from "../Services/userService";
 import Header from "../Components/Header";
 
 
@@ -30,7 +30,7 @@ export default function Register() {
 
     const formSubmitRegister = async (data: any) => {
         if(isValid) {
-            const RegisterResponse = await setUser(data);
+            const RegisterResponse = await register(data.name, data.lastName, data.nickName, data.email, data.password);
             if(RegisterResponse){
                 //alert("main module"); 
                 window.location.href = "/login"; 
@@ -56,28 +56,28 @@ export default function Register() {
                         <img src={hiImage}  className='HiImageR' alt="HelloApp Image"/>
                         <ThemeProvider theme={pTheme}>
                             <TextField
-                                id="firstname"
+                                id="name"
                                 required label="First Name"
                                 variant="standard"  focused
-                                {...register("firstname", {required:true})}
-                                error={!!errors.fname}
-                                helperText={errors.fname && "this field is required!"}
+                                {...register("name", {required:true})}
+                                error={!!errors.name}
+                                helperText={errors.name && "this field is required!"}
                             />
 
                             <TextField
-                                id="lastname"
+                                id="lastName"
                                 required label="Last Name"
                                 variant="standard"  focused
-                                {...register("lastname", {required:true})}
-                                error={!!errors.lname}
-                                helperText={errors.lname && "this field is required!"}
+                                {...register("lastName", {required:true})}
+                                error={!!errors.lastName}
+                                helperText={errors.lastName && "this field is required!"}
                             />
 
                             <TextField
-                                id="nickname"
+                                id="nickName"
                                 label="Nickname"
                                 variant="standard" focused
-                                {...register("nickname", {required:false})}
+                                {...register("nickName", {required:false})}
                             />
 
                             <TextField
