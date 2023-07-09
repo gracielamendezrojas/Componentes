@@ -5,10 +5,11 @@ import TextField from '@mui/material/TextField';
 import {createMuiTheme, ThemeProvider} from '@mui/material/styles';
 import Header from '../Components/Header';
 import {useForm} from "react-hook-form";
-import {Stack} from "@mui/material";
+import {InputAdornment, Stack} from "@mui/material";
 import {getUserByEmailAndPassword} from "../Services/userService";
 import Link from "@mui/material/Link";
 import hiImage from "../Images/HiImage.png";
+import {useState} from "react";
 
 
 const pTheme = createMuiTheme({
@@ -24,7 +25,7 @@ const pTheme = createMuiTheme({
 
 export default function LogIn () {
   const {register, handleSubmit, formState : {errors, isValid}} = useForm({mode: 'onChange'});
-
+  const {showPassword, setShowPassword} = useState(false);
 
   const formSubmitLogIn = async (data: any) => {
 
@@ -66,6 +67,7 @@ export default function LogIn () {
                     id="password"
                     required label="Password"
                     variant="standard" focused
+                    type={showPassword ? "text" : "password"}
                     {...register("password", {required:true})}
                     error={!!errors.password}
                     helperText={errors.password && "this field is required!"}

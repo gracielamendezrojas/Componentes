@@ -7,6 +7,7 @@ import hiImage from "../Images/HiImage.png";
 import {useForm} from "react-hook-form";
 import {registerUser} from "../Services/userService";
 import Header from "../Components/Header";
+import {useState} from "react";
 
 
 const pTheme = createMuiTheme({
@@ -25,6 +26,7 @@ const pTheme = createMuiTheme({
 
 export default function Register() {
     const {register, handleSubmit, formState : {errors, isValid}} = useForm({mode: 'onChange'});
+    const {showPassword, setShowPassword} = useState(false);
 
     const formSubmitRegister = async (data: any) => {
         if(isValid) {
@@ -89,6 +91,7 @@ export default function Register() {
                                 id="password"
                                 required label="Password"
                                 variant="standard" focused
+                                type={showPassword ? "text" : "password"}
                                 {...register("password", {required:true})}
                                 error={!!errors.password}
                                 helperText={errors.password && "this field is required!"}
