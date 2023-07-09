@@ -17,13 +17,13 @@ export const registerUser = async (name, lastname, nickname, email, password)=> 
     const response =  await fetch(`${ip}/register`,  {
         method: 'POST',
         headers: new Headers({ 'Content-type': 'application/json' }),
-        body: {
+        body: JSON.stringify({
             name: name,
             lastName: lastname,
             nickName: nickname,
             email: email,
             password: password
-        }
+        })
 
     })
 
