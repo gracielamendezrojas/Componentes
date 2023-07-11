@@ -1,4 +1,4 @@
-export const ip = "http://3.138.204.126";
+export const ip = "http://3.144.197.140";
 //export const ip = "http://localhost:5001";
 
 
