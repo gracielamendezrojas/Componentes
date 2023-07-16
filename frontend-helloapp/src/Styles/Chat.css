@@ -1,7 +1,7 @@
 .logOut{
-    position: absolute;
-    top: 700px;
-    left: 350px;
+    position: relative;
+    top: 170px;
+    left: 100px;
 }
 .chat{
     background-color: #D3D8DE;
@@ -34,6 +34,7 @@
                 .logo{
                     font-weight: bold;
                     color: #fd4f9f; 
+
                 }
 
                 .user{
@@ -111,7 +112,8 @@
 
         .chats{
             color: #666666; 
-
+            cursor: pointer;
+        
             .imgChat{
                 width: 50px; 
                 width: 50px;
@@ -185,6 +187,15 @@
 
                 &.owner{
                     flex-direction: row-reverse;
+                    .messageContent{
+                        align-items: flex-end;
+                    }
+                    .paragraph_owner{
+                        background-color: #6e80af;
+                        color: white; 
+                        border-radius:10px 0px 10px 10px;
+                    }
+
                 }
             }
         }
