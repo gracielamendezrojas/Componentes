@@ -8,6 +8,10 @@ import {useForm} from "react-hook-form";
 import {registerUser} from "../Services/userService";
 import Header from "../Components/Header";
 import {useState} from "react";
+import Input from '@mui/material/Input';
+import {useRef} from 'react'; 
+
+
 
 
 const pTheme = createMuiTheme({
@@ -28,8 +32,26 @@ export default function Register() {
     const {register, handleSubmit, formState : {errors, isValid}} = useForm({mode: 'onChange'});
     const {showPassword, setShowPassword} = useState(false);
 
-    const formSubmitRegister = async (data: any) => {
+    /**const formSubmitRegister = async (data: any) => {
         if(isValid) {
+            const RegisterResponse = await registerUser(data.name, data.lastName, data.nickName, data.email, data.password);
+            if(RegisterResponse){
+                alert("register successful");
+                window.location.href = "/login"; 
+            }
+        }
+    }*/
+
+    const formSubmitRegisterFD = async (data: any) => {
+        if(isValid) {
+
+          
+            let file = document.getElementById('avatar').files[0];
+            let formData = new FormData();
+            
+            formData.append('file', file);
+            fetch('/upload/image', {method: "POST", body: formData});
+            
             const RegisterResponse = await registerUser(data.name, data.lastName, data.nickName, data.email, data.password);
             if(RegisterResponse){
                 alert("register successful");
@@ -38,11 +60,32 @@ export default function Register() {
         }
     }
 
+    //const inputImage = useRef(null); 
+    /**
+     *     const [imageUrl, setImageUrl] = useState(null);
+
+  const handleFileUpload = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      setImageUrl(reader.result);
+    };
+
+    reader.readAsDataURL(file);
+  };
+
+     */
+
+
+
+
+
     return <>
         <div className="App">
             <Header/>
 
-            <form onSubmit={handleSubmit(formSubmitRegister)} className='flexContainer flexCenter b-color-purple padding'>
+            <form onSubmit={handleSubmit(formSubmitRegisterFD)} className='flexContainer flexCenter b-color-purple padding'>
                 <div className='b-color-purple dimensions'>
                 </div>
 
@@ -73,9 +116,11 @@ export default function Register() {
 
                             <TextField
                                 id="nickName"
-                                label="Nickname"
-                                variant="standard" focused
-                                {...register("nickName", {required:false})}
+                                required label="Nickname"
+                                variant="standard"  focused
+                                {...register("nickName", {required:true})}
+                                error={!!errors.nickName}
+                                helperText={errors.nickName && "this field is required!"}
                             />
 
                             <TextField
@@ -95,6 +140,16 @@ export default function Register() {
                                 {...register("password", {required:true})}
                                 error={!!errors.password}
                                 helperText={errors.password && "this field is required!"}
+                            />
+
+                            <Input
+                                id="avatar"
+                                required label="Avatar" 
+                                variant="standard" focused
+                                type={"file"} 
+                                {...register("inputAvatar", {required:true})}
+                                error={!!errors.avatar}
+                                helperText={errors.avatar && "avatar is required!"}
                             />
 
                             <Button  variant="contained" type={"submit"}>

@@ -94,3 +94,12 @@
 .color-purple{
     color: #97A7CF;
 }
+
+
+::-webkit-file-upload-button{
+    background-color: #97A7CF;
+    border-radius: 10px;
+    color: white;
+    border: none;
+}
+

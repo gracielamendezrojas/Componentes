@@ -113,6 +113,11 @@
         .chats{
             color: #666666; 
             cursor: pointer;
+
+            &:hover{
+                background-color: #c0c1c4;
+                color:white; 
+            }
         
             .imgChat{
                 width: 50px; 
