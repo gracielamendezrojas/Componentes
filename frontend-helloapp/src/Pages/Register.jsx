@@ -42,17 +42,15 @@ export default function Register() {
         }
     }*/
 
-    const formSubmitRegisterFD = async (data: any) => {
+    const formSubmitRegister = async (data: any) => {
         if(isValid) {
 
           
             let file = document.getElementById('avatar').files[0];
             let formData = new FormData();
             
-            formData.append('file', file);
-            fetch('/upload/image', {method: "POST", body: formData});
             
-            const RegisterResponse = await registerUser(data.name, data.lastName, data.nickName, data.email, data.password);
+            const RegisterResponse = await registerUser(data.name, data.lastName, data.nickName, data.email, data.password, file);
             if(RegisterResponse){
                 alert("register successful");
                 window.location.href = "/login"; 
@@ -85,7 +83,7 @@ export default function Register() {
         <div className="App">
             <Header/>
 
-            <form onSubmit={handleSubmit(formSubmitRegisterFD)} className='flexContainer flexCenter b-color-purple padding'>
+            <form onSubmit={handleSubmit(formSubmitRegister)} className='flexContainer flexCenter b-color-purple padding'>
                 <div className='b-color-purple dimensions'>
                 </div>
 
