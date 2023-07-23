@@ -15,9 +15,7 @@ const ChatC = () => {
                     <img className= 'img' src={camera} alt='Camera'/>
                     <img className= 'img' src={add} alt='Add'/>
                     <img className= 'img' src={more} alt='More'/>
-
                 </div>
-
             </div>
             <Messages/>
             <InputPanel/>
