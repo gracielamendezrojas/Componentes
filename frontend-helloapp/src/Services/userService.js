@@ -40,6 +40,8 @@ export const registerUser = async (name, lastname, nickname, email, password, im
     formData.append("password", password);
     formData.append("avatar", image);
 
+    console.log(formData); 
+
     const response =  await fetch(`${ip}/register`,  {
         method: 'POST',
         headers: new Headers({ 'Content-type': 'multipart/form-data' }),
