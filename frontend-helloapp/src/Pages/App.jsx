@@ -4,34 +4,16 @@ import homeImage from "../Images/chatimage.jpg";
 import hiImage from "../Images/HiImage.png";
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
+import Header from "../Components/Header";
 
 
 function App() {
 
   return (
     <div className="App">
-      <header className='flexEnd'>
-        <Link href="/" underline="hover" >
-          {<Typography variant="h6"  gutterBottom>
-            Home
-          </Typography>}
-        </Link>
-        <Link href="/aboutus" underline="hover" className='left-padding'>
-          {<Typography variant="h6" gutterBottom>
-            About us
-          </Typography>}
-        </Link>
-        <Link href="/register" underline="hover" className='left-padding'>
-          {<Typography variant="h6" gutterBottom>
-            Register
-          </Typography>}        
-        </Link>
-        <Link href="/login" underline="hover" className='left-padding right-padding'>
-          {<Typography variant="h6" gutterBottom>
-            Login
-          </Typography>}        
-        </Link>
-      </header>
+      <Header>
+
+      </Header>
       <div className='flexContainer flexSpaceAround'>
         <div>
           <Typography variant="h1" className=' titleColor' gutterBottom>
@@ -44,7 +26,7 @@ function App() {
             Now is the time to chat online at no cost!
           </Typography>
           <img src={hiImage}  className='HiImage' alt="HelloApp Image"/>
-          <Button  variant="contained" href="/login" >          
+          <Button  variant="contained" href="/login">
             <Typography variant="h5" gutterBottom>
               Let´s chat!
             </Typography>

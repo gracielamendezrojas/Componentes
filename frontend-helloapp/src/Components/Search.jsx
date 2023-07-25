@@ -8,13 +8,6 @@ const Search = () => {
             <div className='searchForm'> 
                 <input className= 'input' type='text' placeholder='Find...'/>
             </div>
-            <div className='userChat'>
-                <img className='imgChat' src={avatar}   alt="avatar"/>
-                <div className='userChatInfo'>
-                    <span>Name_Chat</span>
-                    <p>Hello</p>
-                </div>
-            </div>
         </div>
     )
 }
