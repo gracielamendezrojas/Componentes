@@ -44,7 +44,6 @@ export const registerUser = async (name, lastname, nickname, email, password, im
 
     const response =  await fetch(`${ip}/register`,  {
         method: 'POST',
-        headers: new Headers({ 'Content-type': 'multipart/form-data' }),
         body: formData
     })
 
