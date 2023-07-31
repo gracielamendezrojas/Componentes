@@ -31,7 +31,6 @@ export default function LogIn () {
 
     if(isValid) {
       const logInResponse = await getUserByEmailAndPassword(data.email, data.password);
-      console.log(logInResponse); 
       if(logInResponse.token){
           document.cookie = `token=${logInResponse.token}`;
           localStorage.setItem("avatar", logInResponse.avatar);
