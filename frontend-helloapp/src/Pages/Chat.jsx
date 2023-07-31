@@ -1,20 +1,18 @@
 import '../Styles/Chat.css';
 import Sidebar from '../Components/Sidebar';
-import ChatC from '../Components/ChatC';
+import ChatDetail from '../Components/ChatDetail';
  
 
 function Chat() {
 
-  return (
-
-    <div className='chat'>
-      <div className='container'>
-        <Sidebar/>
-        <ChatC/>
-
+  return <>
+      <div className='chat'>
+          <div className='container'>
+              <Sidebar/>
+              <ChatDetail/>
+          </div>
       </div>
-    </div>
-  );
+  </>
 }
 
 export default Chat;

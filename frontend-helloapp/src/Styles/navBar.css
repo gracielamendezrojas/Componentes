@@ -1,0 +1,34 @@
+.navImgChat{
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    padding-left: 12px;
+}
+
+.logo{
+    font-weight: bold;
+    color: #fd4f9f;
+    padding: 10px;
+    font-size: 20px;
+}
+
+
+.cont-name{
+    align-items: center;
+    display: flex;
+}
+
+.name{
+    color: #fd4f9f;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.cont-logout{
+    padding: 4px;
+}
+
+
+
+

@@ -3,6 +3,12 @@
     top: 170px;
     left: 100px;
 }
+
+.logOutDivider{
+    position: relative;
+    top: 158px;
+}
+
 .chat{
     background-color: #D3D8DE;
     height: 100vh;
@@ -31,22 +37,11 @@
                 padding: 10px;
                 justify-content: space-between;
 
-                .logo{
-                    font-weight: bold;
-                    color: #fd4f9f; 
 
-                }
 
                 .user{
                     display:flex; 
                     gap:10px; 
-                }
-                .imgChat {
-                    background-color: #ddddf7;
-                    height: 24px;
-                    width: 24px;
-                    border-radius: 50%;
-                    object-fit: cover;
                 }
                 
             } 
@@ -65,26 +60,13 @@
                 }
             }
 
-            .userChat{
-                padding: 10px; 
-                display: flex; 
-                align-items: center;
-                gap:10px; 
-                color: #666666; 
-                cursor: pointer; 
-            }
 
             &:hover{
                 background-color: #c0c1c4;
                 color:white; 
             }
 
-            .imgChat{
-                width: 50px; 
-                width: 50px;
-                border-radius: 50%;
-                object-fit: cover;
-             }
+
 
         }
         .chatC{
@@ -113,30 +95,10 @@
         .chats{
             color: #666666; 
             cursor: pointer;
-
-            &:hover{
-                background-color: #c0c1c4;
-                color:white; 
-            }
+            padding: 20px;
         
-            .imgChat{
-                width: 50px; 
-                width: 50px;
-                border-radius: 50%;
-                object-fit: cover;
-             }
 
-             .userChatInfo{
 
-                span{
-                    font-size: 18px;
-                    font-weight: bold;
-                }
-                p{
-                    font-size: 18px;
-                    font-weight: bold;
-                }
-            }
         }
 
         .messages{
@@ -247,4 +209,7 @@
         }
     }
 }
+
+
+
 

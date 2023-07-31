@@ -1,62 +1,38 @@
-import React, {useState} from 'react'
-import avatar from "../Images/avatar.jpeg";
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
-
+import React, {useEffect, useState} from 'react'
+import {getChatsByUserId} from "../Services/chatService";
+import {getCookieValue} from "../Services/utils";
+import {parseJwt} from "../Services/jwt";
+import {ChatInformation} from "./ChatInformation";
 
 const Chats = () => {
+    const [chats, setChats] = useState();
+    const token = getCookieValue('token');
+    const decode =  parseJwt(token);
 
-    const [chats, setChats] = useState(
-      [
-          {
-              img: {avatar},
-              name: "Name_chat1",
-              message: "Hello"
-          },
-          {
-              img: {avatar},
-              name: "Name_chat2",
-              message: "Hello"
-          },
-          {
-              img: {avatar},
-              name: "Name_chat3",
-              message: "Hello"
-          },
-      ]
-    );
+    useEffect(() => {
+        getChatsByUserId(decode.id).then((value) => {
+            setChats(value);
+        });
+    }, [decode.id])
 
-    const logout = (event) =>
-    {
-      event.preventDefault(); 
-      document.cookie = 'token' + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-      localStorage.clear(); 
-      window.location.href = "/"; 
-      //alert("cookie deleted")
+
+    if(!chats){
+        return <span>Loading</span>
     }
-    return (
+
+
+    return <>
         <div className='chats'>
             {chats.map((chat) =>{
-                return(
-                    <div className='userChat'>
-                        <img className='imgChat' src={avatar}  alt="avatar"/>
-                        <div className='userChatInfo'>
-                            <span>{chat.name}</span>
-                            <p>{chat.message}</p>
-                        </div>
-                    </div>
-                );
+                const latestMessage = chat.messages[chat.messages.length -1]
+               return <ChatInformation key={chat.name} name={chat.name} message={latestMessage.content} photo={chat.photo}/>
             })}
-
-            <Link onClick={logout} className='logOut' underline="hover" >
-              {<Typography variant="h6" gutterBottom>
-                Log out
-              </Typography>}
-            </Link>
-
         </div>
-    )
+
+
+
+
+    </>
 }
 
 export default Chats

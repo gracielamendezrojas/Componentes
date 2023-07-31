@@ -1,5 +1,7 @@
-// export const ip = "http://18.223.2.89";
-export const ip = "http://localhost:5001";
+
+export const ip = "http://18.119.12.122";
+
+//export const ip = "http://localhost:5005git";
 
 
 export const getUserByEmailAndPassword = async (email, password)=> {
@@ -11,6 +13,7 @@ export const getUserByEmailAndPassword = async (email, password)=> {
 
    return await response.json();
 };
+
 
 
 export const registerUserOLD = async (name, lastname, nickname, email, password)=> {
@@ -40,10 +43,9 @@ export const registerUser = async (name, lastname, nickname, email, password, im
     formData.append("password", password);
     formData.append("avatar", image);
 
-    console.log(formData); 
-
     const response =  await fetch(`${ip}/register`,  {
         method: 'POST',
+        headers: new Headers({ 'Content-type': 'multipart/form-data' }),
         body: formData
     })
 
