@@ -1,11 +1,17 @@
 import React from 'react'
 import Message from './Message'
 
-const Messages = () => {
+const Messages = (propsMessages: {messages: [], toPhoto: JSX.Element, myPhoto: JSX.Element}) => {
+
     return <>
         <div className='messages'>
-            <Message/>
+            {
+                propsMessages.messages.map((message) => {
+                   return <Message content={message.content} to={message.to} toPhoto={propsMessages.toPhoto} myPhoto={propsMessages.myPhoto} date={message.date} ></Message>
+                })
+            }
         </div>
+
     </>
 }
 

@@ -1,24 +1,46 @@
-import React from 'react'
-import add from '../Images/add.png'
+import React, {useMemo} from 'react'
 import more from '../Images/more.png'
 import Messages from '../Components/Messages';
 import InputPanel from './InputPanel';
+import avatar from "../Images/avatar.jpeg";
+import '../Styles/ChatDetail.css';
 
 
-const ChatDetail = () => {
-    return (
+const ChatDetail = (chatDetailProps: {chat: any}) => {
+    console.log(chatDetailProps.chat)
+    const avatarImage = localStorage.getItem('avatar');
+
+    const toPhoto = useMemo(() => {
+        return chatDetailProps.chat.photo ?
+            <img className='imgChat' src={"data:image/png;base64, " + chatDetailProps.chat.photo} alt="avatar"/> :
+            <img className='imgChat' src={avatar} alt="avatar"/>
+    }, [chatDetailProps.chat.photo]);
+
+    const myPhoto = useMemo(() => {
+        return avatarImage.photo ?
+            <img src={"data:image/png;base64, " + avatarImage} className='imgChat' /> :
+            <img className='navImgChat' src={avatar} alt="avatar"/>
+
+    }, [avatarImage])
+
+    return <>
         <div className='chatC'>
             <div className='chatInfo'>
-                <span> Jane</span>
+                <div className={'toInfo'}>
+                    {toPhoto}
+                    <div className={'cont-toName'}>
+                    <span className={'toName'}>{chatDetailProps.chat.name}</span>
+                    </div>
+                </div>
+
                 <div className="chatIcons">
-                    <img className= 'img' src={add} alt='Add'/>
                     <img className= 'img' src={more} alt='More'/>
                 </div>
             </div>
-            <Messages/>
+            <Messages messages={chatDetailProps.chat.messages} toPhoto={toPhoto} myPhoto={myPhoto}/>
             <InputPanel/>
         </div>
-    )
+    </>
 }
 
 export default ChatDetail
