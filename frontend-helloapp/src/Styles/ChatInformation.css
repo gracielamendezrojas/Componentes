@@ -22,7 +22,6 @@
 .userChatInfo {
     display: flex;
     flex-direction: column;
-
 }
 
 .nameInfo{

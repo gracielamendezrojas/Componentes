@@ -1,0 +1,16 @@
+.toInfo{
+    display: flex;
+}
+
+.cont-toName{
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.toName{
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+

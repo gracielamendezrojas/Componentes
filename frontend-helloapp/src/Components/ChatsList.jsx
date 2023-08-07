@@ -4,7 +4,7 @@ import {getCookieValue} from "../Services/utils";
 import {parseJwt} from "../Services/jwt";
 import {ChatInformation} from "./ChatInformation";
 
-const Chats = () => {
+const ChatsList = (propChatList: {onChatSelected : (chat: any) => void}) => {
     const [chats, setChats] = useState();
     const token = getCookieValue('token');
     const decode =  parseJwt(token);
@@ -15,24 +15,22 @@ const Chats = () => {
         });
     }, [decode.id])
 
-
     if(!chats){
         return <span>Loading</span>
     }
-
 
     return <>
         <div className='chats'>
             {chats.map((chat) =>{
                 const latestMessage = chat.messages[chat.messages.length -1]
-               return <ChatInformation key={chat.name} name={chat.name} message={latestMessage.content} photo={chat.photo}/>
+               return <ChatInformation
+                   key={chat.name}
+                   name={chat.name}
+                   message={latestMessage.content}
+                   photo={chat.photo} onChatSelected={() => propChatList.onChatSelected(chat)}/>
             })}
         </div>
-
-
-
-
     </>
 }
 
-export default Chats
+export default ChatsList

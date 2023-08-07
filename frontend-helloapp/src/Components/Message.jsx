@@ -1,20 +1,24 @@
 import React from 'react'
-import avatar from "../Images/avatar.jpeg";
+import {getCookieValue} from "../Services/utils";
+import {parseJwt} from "../Services/jwt";
 
-const Message = () => {
-    return (
-        <div className='message owner'>
+const Message = (messageProps: {content: string, to: number, toPhoto: JSX.Element, myPhoto: JSX.Element, date: string}) => {
+    const token = getCookieValue('token');
+    const decode = parseJwt(token);
+
+    const messageClass = decode.id === messageProps.to ? "message owner" : "message";
+
+    return <>
+        <div className={messageClass}>
             <div className="messageInfo">
-                <img className='img_MessageI' src={avatar}   alt="avatar"/>
-                <span>Just now</span>
+                {decode.id === messageProps.to ? messageProps.myPhoto : messageProps.toPhoto}
             </div>
             <div className="messageContent">
-                <p className='paragraph_owner'>Hello</p>
-                <img className='img_MessageC' src={avatar}   alt="avatar"/>
-
+                <p className='paragraph_owner'>{messageProps.content}</p>
             </div>
         </div>
-    )
+
+    </>
 }
 
 export default Message

@@ -4,7 +4,6 @@ import {getCookieValue} from "../Services/utils";
 import {parseJwt} from "../Services/jwt";
 import '../Styles/navBar.css'
 import LogoutIcon from '@mui/icons-material/Logout';
-import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 
 
