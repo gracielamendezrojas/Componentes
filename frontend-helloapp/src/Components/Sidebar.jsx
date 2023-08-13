@@ -5,12 +5,12 @@ import ChatsList from './ChatsList';
 
 
 
-const Sidebar = (propSideBar: {onChatSelected : (chat: any) => void}) => {
+const Sidebar = (propSideBar: { chats: Array<any>, onChatSelected : (chat: any) => void}) => {
     return <>
         <div className='sidebar'>
             <Navbar/>
             <Search/>
-            <ChatsList onChatSelected={propSideBar.onChatSelected}/>
+            <ChatsList chats={propSideBar.chats} onChatSelected={propSideBar.onChatSelected}/>
         </div>
     </>
 }

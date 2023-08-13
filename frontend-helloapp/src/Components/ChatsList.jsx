@@ -4,16 +4,10 @@ import {getCookieValue} from "../Services/utils";
 import {parseJwt} from "../Services/jwt";
 import {ChatInformation} from "./ChatInformation";
 
-const ChatsList = (propChatList: {onChatSelected : (chat: any) => void}) => {
-    const [chats, setChats] = useState();
+const ChatsList = (propChatList: {chats: Array<any>, onChatSelected : (chat: any) => void}) => {
+    const chats = propChatList.chats
     const token = getCookieValue('token');
     const decode =  parseJwt(token);
-
-    useEffect(() => {
-        getChatsByUserId(decode.id).then((value) => {
-            setChats(value);
-        });
-    }, [decode.id])
 
     if(!chats){
         return <span>Loading</span>
@@ -23,6 +17,7 @@ const ChatsList = (propChatList: {onChatSelected : (chat: any) => void}) => {
         <div className='chats'>
             {chats.map((chat) =>{
                 const latestMessage = chat.messages[chat.messages.length -1]
+
                return <ChatInformation
                    key={chat.name}
                    name={chat.name}
