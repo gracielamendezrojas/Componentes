@@ -1,5 +1,4 @@
 import React, {useMemo} from 'react'
-import more from '../Images/more.png'
 import Messages from '../Components/Messages';
 import InputPanel from './InputPanel';
 import avatar from "../Images/avatar.jpeg";
@@ -31,10 +30,6 @@ const ChatDetail = (chatDetailProps: {chat: any}) => {
                     <div className={'cont-toName'}>
                     <span className={'toName'}>{chatDetailProps.chat.name}</span>
                     </div>
-                </div>
-
-                <div className="chatIcons">
-                    <img className= 'img' src={more} alt='More'/>
                 </div>
             </div>
             <Messages messages={chatDetailProps.chat.messages} toPhoto={toPhoto} myPhoto={myPhoto}/>

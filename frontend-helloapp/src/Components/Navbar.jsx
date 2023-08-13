@@ -5,7 +5,7 @@ import {parseJwt} from "../Services/jwt";
 import '../Styles/navBar.css'
 import LogoutIcon from '@mui/icons-material/Logout';
 import Link from "@mui/material/Link";
-
+import more from '../Images/more.png'
 
 
 const Navbar = () => {
@@ -36,7 +36,10 @@ const Navbar = () => {
 
             </div>
 
-            <div className={'cont-logout'}>
+            <div className={'cont-actions'}>
+                <button className='moreButton'>
+                    <img className= 'img' src={more} alt='More'/>
+                </button>
                 <Link onClick={logout} underline="hover"><LogoutIcon style={{ color: 'white' }} fontSize={'large'}/></Link>
             </div>
 
