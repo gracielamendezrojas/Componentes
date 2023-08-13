@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react'
+import React, {useEffect, useMemo} from 'react'
 import more from '../Images/more.png'
 import Messages from '../Components/Messages';
 import InputPanel from './InputPanel';
@@ -6,8 +6,8 @@ import avatar from "../Images/avatar.jpeg";
 import '../Styles/ChatDetail.css';
 
 
-const ChatDetail = (chatDetailProps: {chat: any}) => {
-    console.log(chatDetailProps.chat)
+const ChatDetail = (chatDetailProps: {chat: any, onMessageSent:(message) => void}) => {
+
     const avatarImage = localStorage.getItem('avatar');
 
     const toPhoto = useMemo(() => {
@@ -38,7 +38,8 @@ const ChatDetail = (chatDetailProps: {chat: any}) => {
                 </div>
             </div>
             <Messages messages={chatDetailProps.chat.messages} toPhoto={toPhoto} myPhoto={myPhoto}/>
-            <InputPanel/>
+
+            <InputPanel chat={chatDetailProps.chat} onMessageSent={chatDetailProps.onMessageSent}/>
         </div>
     </>
 }

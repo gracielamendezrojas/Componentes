@@ -7,7 +7,7 @@ const Messages = (propsMessages: {messages: [], toPhoto: JSX.Element, myPhoto: J
         <div className='messages'>
             {
                 propsMessages.messages.map((message) => {
-                   return <Message content={message.content} to={message.to} toPhoto={propsMessages.toPhoto} myPhoto={propsMessages.myPhoto} date={message.date} ></Message>
+                   return <Message key={message.id} content={message.content} to={message.to} toPhoto={propsMessages.toPhoto} myPhoto={propsMessages.myPhoto} date={message.date} ></Message>
                 })
             }
         </div>
