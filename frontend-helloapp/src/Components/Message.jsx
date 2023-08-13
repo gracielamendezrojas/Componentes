@@ -6,7 +6,7 @@ const Message = (messageProps: {content: string, to: number, toPhoto: JSX.Elemen
     const token = getCookieValue('token');
     const decode = parseJwt(token);
 
-    const messageClass = decode.id === messageProps.to ? "message owner" : "message";
+    const messageClass = decode.id === messageProps.to ? "message" : "message owner";
 
     return <>
         <div className={messageClass}>
