@@ -39,18 +39,11 @@ function Profile() {
     const submitUpdate = async (event) => {
         event.preventDefault(); 
         
-        let r = await updateUser(firstName, lastName, nickName, document.getElementById('avatar').files[0], userInfo);
-        console.log(r);
-             /** 
-        let file = document.getElementById('avatar').files[0];
-        let formData = new FormData();
-   
-        const UpdateResponse = await registerUser(data.name, data.lastName, data.nickName, data.email, data.password, file);
-        if(UpdateResponse){
-            window.location.href = "/chats"; 
-            
-        }
-        */
+        let response = await updateUser(firstName, lastName, nickName, document.getElementById('avatar').files[0], userInfo);
+        document.cookie = `token=${response.token}`;
+        localStorage.removeItem("avatar"); 
+        localStorage.setItem("avatar", response.avatar);
+        window.location.href = "/chats"; 
     }
 
 
@@ -91,6 +84,7 @@ function Profile() {
                         />
                         <Input
                             id="avatar"
+                            required
                             label="Avatar" 
                             variant="standard" focused
                             type={"file"} 

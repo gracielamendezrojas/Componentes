@@ -20,7 +20,6 @@ function Chat() {
 
     useEffect(() => {
         getChatsByUserId(decode.id).then((value) => {
-            console.log(value)
             setChats(value);
         });
     }, [decode.id])

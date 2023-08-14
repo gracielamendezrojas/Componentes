@@ -33,7 +33,7 @@ const ChatDetail = (chatDetailProps: {chat: any, onMessageSent:(message) => void
                     </div>
                 </div>
             </div>
-            <Messages messages={chatDetailProps.chat.messages} toPhoto={myPhoto} myPhoto={toPhoto}/>
+            <Messages messages={chatDetailProps.chat.messages} toPhoto={toPhoto} myPhoto={myPhoto}/>
 
             <InputPanel chat={chatDetailProps.chat} onMessageSent={chatDetailProps.onMessageSent}/>
         </div>
