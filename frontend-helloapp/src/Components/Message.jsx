@@ -11,7 +11,7 @@ const Message = (messageProps: {content: string, to: number, toPhoto: JSX.Elemen
     return <>
         <div className={messageClass}>
             <div className="messageInfo">
-                {decode.id === messageProps.to ? messageProps.myPhoto : messageProps.toPhoto}
+                {decode.id === messageProps.to ? messageProps.toPhoto : messageProps.myPhoto}
             </div>
             <div className="messageContent">
                 <p className='paragraph_owner'>{messageProps.content}</p>

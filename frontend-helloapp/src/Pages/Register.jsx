@@ -11,9 +11,6 @@ import {useState} from "react";
 import Input from '@mui/material/Input';
 
 
-
-
-
 const pTheme = createMuiTheme({
     palette: {
         primary:{
@@ -24,8 +21,6 @@ const pTheme = createMuiTheme({
         }
     }
 });
-
-
 
 
 export default function Register() {
@@ -42,19 +37,29 @@ export default function Register() {
         }
     }*/
 
+    const toBase64 = (file, callback) => {
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function () {
+            callback(reader.result)
+        };
+        reader.onerror = function (error) {
+            console.error('Error: ', error);
+        };
+    }
+
     const formSubmitRegister = async (data: any) => {
         if(isValid) {
 
-          
             let file = document.getElementById('avatar').files[0];
-            let formData = new FormData();
-            
-            
-            const RegisterResponse = await registerUser(data.name, data.lastName, data.nickName, data.email, data.password, file);
-            if(RegisterResponse){
-                alert("register successful");
-                window.location.href = "/login"; 
-            }
+
+            toBase64(file, async (fileAsBase64) => {
+                const RegisterResponse = await registerUser(data.name, data.lastName, data.nickName, data.email, data.password, fileAsBase64);
+                if(RegisterResponse){
+                    alert("register successful");
+                    window.location.href = "/login";
+                }
+            })
         }
     }
 
@@ -142,7 +147,7 @@ export default function Register() {
 
                             <Input
                                 id="avatar"
-                                required label="Avatar" 
+
                                 variant="standard" focused
                                 type={"file"} 
                                 {...register("inputAvatar", {required:true})}

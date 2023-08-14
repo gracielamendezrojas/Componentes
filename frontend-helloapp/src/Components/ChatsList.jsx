@@ -21,7 +21,7 @@ const ChatsList = (propChatList: {chats: Array<any>, onChatSelected : (chat: any
                return <ChatInformation
                    key={chat.name}
                    name={chat.name}
-                   message={latestMessage.content}
+                   message={latestMessage?.content}
                    photo={chat.photo} onChatSelected={() => propChatList.onChatSelected(chat)}/>
             })}
         </div>

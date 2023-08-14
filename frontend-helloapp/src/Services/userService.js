@@ -1,7 +1,7 @@
 
-export const ip = "http://3.144.127.183";
+//export const ip = "http://3.144.127.183";
 
-//export const ip = "http://localhost:5005";
+export const ip = "http://localhost:5005";
 
 
 export const getUserByEmailAndPassword = async (email, password)=> {
@@ -35,20 +35,18 @@ export const registerUserOLD = async (name, lastname, nickname, email, password)
 
 
 export const registerUser = async (name, lastname, nickname, email, password, image)=> {
-    let formData = new FormData();
-    formData.append("firstName", name);
-    formData.append("lastName", lastname);
-    formData.append("nickName", nickname);
-    formData.append("email", email);
-    formData.append("password", password);
-    formData.append("avatar", image);
-
     const response =  await fetch(`${ip}/register`,  {
         method: 'POST',
-        headers: new Headers({ 'Content-type': 'multipart/form-data' }),
-        body: formData
+        headers: new Headers({ 'Content-type': 'application/json' }),
+        body: JSON.stringify({
+            firstName: name,
+            lastName: lastname ,
+            nickName: nickname,
+            email,
+            password,
+            avatar: image
+        })
     })
-
    return await response.json();
 };
 
@@ -60,7 +58,6 @@ export const updateUser = async (name, lastname, nickname, image, token)=> {
     if(!!image) {
         formData.append("avatar", image);
     }
-   
 
     const response =  await fetch(`${ip}/users`,  {
         method: 'PUT',
