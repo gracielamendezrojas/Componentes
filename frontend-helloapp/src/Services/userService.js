@@ -1,5 +1,5 @@
 
-export const ip = "http://3.16.128.5";
+export const ip = "http://3.144.127.183";
 
 //export const ip = "http://localhost:5005";
 
