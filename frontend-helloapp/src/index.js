@@ -8,6 +8,7 @@ import LogIn from "./Pages/LogIn";
 import Register from  "./Pages/Register"
 import AboutUs from "./Pages/AboutUs";
 import Chat from "./Pages/Chat";
+import Profiles from "./Pages/Profile";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,8 +18,9 @@ root.render(
             <Route path='/' element={<App />}/>
             <Route path='/login' element={<LogIn />}/>
             <Route path='/aboutus' element={<AboutUs />}/>
-            <Route path='/chat' element={<Chat />}/>
+            <Route path='/chats' element={<Chat />}/>
             <Route path='/register' element={<Register />}/>
+            <Route path='/profiles' element={<Profiles />}/>
 
         </Routes>
     </Router>

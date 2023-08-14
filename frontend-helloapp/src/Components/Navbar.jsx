@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React, {useState} from 'react'; 
 import avatar from "../Images/avatar.jpeg";
 import {getCookieValue} from "../Services/utils"; 
 import {parseJwt} from "../Services/jwt";
@@ -9,6 +9,8 @@ import more from '../Images/more.png'
 
 
 const Navbar = () => {
+    const [isActionsOpen, setIsActionsOpen] = useState(false); 
+
     const userInfo = getCookieValue('token');
     const parseUserInfo =  parseJwt(userInfo); 
     const avatarImage = localStorage.getItem('avatar');
@@ -26,7 +28,7 @@ const Navbar = () => {
             <div className='user'>
 
                 {
-                    avatarImage.photo ?
+                    avatarImage ?
                         <img src={"data:image/png;base64, " + avatarImage} className='imgChat' /> :
                         <img className='navImgChat' src={avatar} alt="avatar"/>
                 }
@@ -37,10 +39,15 @@ const Navbar = () => {
             </div>
 
             <div className={'cont-actions'}>
-                <button className='moreButton'>
+                <button onClick = {()=>{ setIsActionsOpen(!isActionsOpen) }} className='moreButton'>
                     <img className= 'img' src={more} alt='More'/>
                 </button>
                 <Link onClick={logout} underline="hover"><LogoutIcon style={{ color: 'white' }} fontSize={'large'}/></Link>
+                {isActionsOpen && <ul className='action-menu'>
+                    <li>
+                        <Link href="/Profiles" style={{ color: 'white' }}>Editar perfil</Link>
+                    </li>
+                </ul>}
             </div>
 
         </div>

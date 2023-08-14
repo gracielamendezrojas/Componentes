@@ -1,7 +1,7 @@
 import React from 'react'
 import Message from './Message'
 
-const Messages = (propsMessages: {messages: [], toPhoto: JSX.Element, myPhoto: JSX.Element}) => {
+const Messages = (propsMessages: {messages: [], myPhoto: JSX.Element, toPhoto: JSX.Element}) => {
 
     return <>
         <div className='messages'>

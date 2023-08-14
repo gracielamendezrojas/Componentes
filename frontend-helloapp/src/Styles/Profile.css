@@ -1,0 +1,105 @@
+.Update {
+    text-align: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.HiImageR{
+    width: 120px;
+}
+
+.alignItems{
+    align-items: center;
+}
+
+
+.borderRadius{
+    border-radius: 10%;
+}
+
+.flexEnd{
+    display:flex;
+    justify-content: flex-end;
+    display:flex;
+    align-items: center;
+}
+
+.flexSpaceAround{
+    display:flex;
+    justify-content: space-around;
+}
+
+.flexCenter{
+    display:flex;
+    justify-content: center;
+}
+
+.flexSpaceEvenly{
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.flexContainer{
+    display:flex;
+    flex-basis: auto;
+}
+
+.flexColumn{
+    display:flex;
+    flex-direction: column ;
+}
+
+.flexStart{
+    display:flex;
+    align-items: flex-start;
+}
+
+.dimensions{
+    width: 40%;
+    min-height: 100vh;
+    align-items: center;
+}
+
+.width{
+    width: 50%;
+}
+
+.padding{
+    padding: 3%;
+}
+
+.left-padding{
+    padding-left: 2%;
+}
+
+.right-padding{
+    padding-right: 8%;
+}
+
+.titleColor{
+    color: #fd4f9f;
+}
+
+.color-white{
+    color: #ffffff;
+}
+
+.b-color-purple{
+    background-color: #D3D8DE;
+}
+
+.b-color-white{
+    background-color: white;
+}
+.color-purple{
+    color: #97A7CF;
+}
+
+
+::-webkit-file-upload-button{
+    background-color: #97A7CF;
+    border-radius: 10px;
+    color: white;
+    border: none;
+}
+

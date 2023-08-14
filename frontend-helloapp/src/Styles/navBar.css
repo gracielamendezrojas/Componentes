@@ -28,6 +28,17 @@
 .cont-actions{
     display:flex; 
     padding: 4px;
+    position: relative;
+}
+
+.action-menu{
+    position: absolute; 
+    padding: 5px 5px;
+    list-style-type: none;
+    background-color: #6e80af;
+    border-radius: 5px;
+    left: 0;
+    top: 30px;
 }
 
 

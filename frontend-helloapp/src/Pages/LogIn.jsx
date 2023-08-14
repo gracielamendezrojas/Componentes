@@ -34,7 +34,7 @@ export default function LogIn () {
       if(logInResponse.token){
           document.cookie = `token=${logInResponse.token}`;
           localStorage.setItem("avatar", logInResponse.avatar);
-          window.location.href = "/chat"; 
+          window.location.href = "/chats"; 
        }else{
          alert("user does not exist"); 
        }

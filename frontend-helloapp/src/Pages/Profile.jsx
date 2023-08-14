@@ -1,0 +1,111 @@
+import '../Styles/Profile.css';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import TextField from '@mui/material/TextField';
+import {createMuiTheme, ThemeProvider} from '@mui/material/styles';
+import hiImage from "../Images/HiImage.png";
+import {updateUser} from "../Services/userService";
+import {useState} from "react";
+import Input from '@mui/material/Input';
+import {parseJwt} from "../Services/jwt";
+import {getCookieValue} from "../Services/utils";
+
+
+
+const pTheme = createMuiTheme({
+    palette: {
+        primary:{
+            main: '#97A7CF'
+        },
+        text:{
+            primary: '#97A7CF'
+        }
+    }
+});
+
+
+
+function Profile() {
+    const userInfo = getCookieValue('token');
+    const parseUserInfo = parseJwt(userInfo); 
+    const [firstName, setFirstName] = useState(parseUserInfo.firstName); 
+    const [lastName, setLastName] = useState(parseUserInfo.lastName); 
+    const [nickName, setNickName] = useState(parseUserInfo.nickName); 
+
+    const firstNameHandler = (event) =>{setFirstName(event.target.value)}
+    const lasNameHandler = (event) =>{setLastName(event.target.value)}
+    const nickNameHandler = (event) =>{setNickName(event.target.value)}
+
+    const submitUpdate = async (event) => {
+        event.preventDefault(); 
+        
+        let r = await updateUser(firstName, lastName, nickName, document.getElementById('avatar').files[0], userInfo);
+        console.log(r);
+             /** 
+        let file = document.getElementById('avatar').files[0];
+        let formData = new FormData();
+   
+        const UpdateResponse = await registerUser(data.name, data.lastName, data.nickName, data.email, data.password, file);
+        if(UpdateResponse){
+            window.location.href = "/chats"; 
+            
+        }
+        */
+    }
+
+
+    return (
+        <div className="Update">
+
+            <form onSubmit={submitUpdate} className='flexContainer flexCenter b-color-purple padding'>
+                <div className='b-color-purple dimensions'>
+                </div>
+
+                <div className = 'flexColumn flexSpaceEvenly dimensions  borderRadius b-color-white'>
+
+                    <Typography variant="h5" className='color-purple'>
+                        Profile
+                    </Typography>
+                    <img src={hiImage}  className='HiImageR' alt="HelloApp Image"/>
+                    <ThemeProvider theme={pTheme}>
+                        <TextField
+                            id="name"
+                            required label="First Name"
+                            variant="standard"  focused
+                            value = {firstName}
+                            onChange={firstNameHandler}
+                        />
+                        <TextField
+                            id="lastName"
+                            required label="Last Name"
+                            variant="standard"  focused
+                            value = {lastName}
+                            onChange={lasNameHandler}
+                        />
+                        <TextField
+                            id="nickName"
+                            required label="Nickname"
+                            variant="standard"  focused
+                            value = {nickName}
+                            onChange={nickNameHandler}
+                        />
+                        <Input
+                            id="avatar"
+                            label="Avatar" 
+                            variant="standard" focused
+                            type={"file"} 
+                        />
+                        <Button  variant="contained" type={"submit"}>
+                            <Typography variant="h5" className='color-white' >
+                                Update
+                            </Typography>
+                        </Button>
+                    </ThemeProvider>
+                </div>
+                <div className='b-color-purple dimensions'></div>
+            </form>
+        </div>
+    );
+  }
+
+  export default Profile;

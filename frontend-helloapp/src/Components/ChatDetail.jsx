@@ -17,7 +17,7 @@ const ChatDetail = (chatDetailProps: {chat: any, onMessageSent:(message) => void
     }, [chatDetailProps.chat.photo]);
 
     const myPhoto = useMemo(() => {
-        return avatarImage.photo ?
+        return avatarImage ?
             <img src={"data:image/png;base64, " + avatarImage} className='imgChat' /> :
             <img className='navImgChat' src={avatar} alt="avatar"/>
 
@@ -27,13 +27,13 @@ const ChatDetail = (chatDetailProps: {chat: any, onMessageSent:(message) => void
         <div className='chatC'>
             <div className='chatInfo'>
                 <div className={'toInfo'}>
-                    {toPhoto}
+                    {myPhoto}
                     <div className={'cont-toName'}>
                     <span className={'toName'}>{chatDetailProps.chat.name}</span>
                     </div>
                 </div>
             </div>
-            <Messages messages={chatDetailProps.chat.messages} toPhoto={toPhoto} myPhoto={myPhoto}/>
+            <Messages messages={chatDetailProps.chat.messages} toPhoto={myPhoto} myPhoto={toPhoto}/>
 
             <InputPanel chat={chatDetailProps.chat} onMessageSent={chatDetailProps.onMessageSent}/>
         </div>

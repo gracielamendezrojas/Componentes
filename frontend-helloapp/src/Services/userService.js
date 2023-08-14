@@ -51,3 +51,24 @@ export const registerUser = async (name, lastname, nickname, email, password, im
 
    return await response.json();
 };
+
+export const updateUser = async (name, lastname, nickname, image, token)=> {
+    let formData = new FormData();
+    formData.append("firstName", name);
+    formData.append("lastName", lastname);
+    formData.append("nickName", nickname);
+    if(!!image) {
+        formData.append("avatar", image);
+    }
+   
+
+    const response =  await fetch(`${ip}/users`,  {
+        method: 'PUT',
+        headers: new Headers({'x-token':token }),
+        body: formData
+    })
+
+   return await response.json();
+};
+
+
