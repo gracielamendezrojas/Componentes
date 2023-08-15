@@ -16,7 +16,7 @@ const Sidebar = (propSideBar: { chats: Array<any>, onChatSelected : (chat: any) 
         <div className='sidebar'>
             <Navbar/>
             <Search returnTerm = {pCallBack}/>
-            <ChatsList chats={propSideBar.chats} onChatSelected={propSideBar.onChatSelected} />
+            <ChatsList chats={propSideBar.chats} onChatSelected={propSideBar.onChatSelected} termValue = {term} />
         </div>
     </>
 }

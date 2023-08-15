@@ -14,7 +14,7 @@ const Search = ({returnTerm} : props) => {
     return (
         <div className = 'search'> 
             <div className='searchForm'> 
-                <input className= 'input' type='text' placeholder='Find...' onChange={handleSearch}/>
+                <input className= 'input' type='text' placeholder='Find...' onChange={handleSearch} style={{color:"Black"}}/>
             </div>
         </div>
     )
