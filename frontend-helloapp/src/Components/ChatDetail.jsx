@@ -27,7 +27,7 @@ const ChatDetail = (chatDetailProps: {chat: any, onMessageSent:(message) => void
         <div className='chatC'>
             <div className='chatInfo'>
                 <div className={'toInfo'}>
-                    {myPhoto}
+                    {toPhoto}
                     <div className={'cont-toName'}>
                     <span className={'toName'}>{chatDetailProps.chat.name}</span>
                     </div>
