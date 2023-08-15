@@ -24,6 +24,17 @@ const pTheme = createMuiTheme({
 });
 
 
+const toBase64 = (file, callback) => {
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function () {
+        callback(reader.result)
+    };
+    reader.onerror = function (error) {
+        console.error('Error: ', error);
+    };
+}
+
 
 function Profile() {
     const userInfo = getCookieValue('token');
@@ -39,11 +50,20 @@ function Profile() {
     const submitUpdate = async (event) => {
         event.preventDefault(); 
         
-        let response = await updateUser(firstName, lastName, nickName, document.getElementById('avatar').files[0], userInfo);
-        document.cookie = `token=${response.token}`;
-        localStorage.removeItem("avatar"); 
-        localStorage.setItem("avatar", response.avatar);
-        window.location.href = "/chats"; 
+
+        let file = document.getElementById('avatar').files[0];
+
+        toBase64(file, async (fileAsBase64) => {           
+            let response = await updateUser(firstName, lastName, nickName, fileAsBase64, userInfo);
+
+            if(response){
+                document.cookie = `token=${response.token}`;
+                localStorage.removeItem("avatar"); 
+                localStorage.setItem("avatar", response.avatar);
+                window.location.href = "/chats"; 
+            }
+        })
+
     }
 
 
