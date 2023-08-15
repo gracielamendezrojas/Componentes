@@ -1,7 +1,7 @@
 
-//export const ip = "http://18.117.144.220";
+export const ip = "http://18.117.79.249";
 
-export const ip = "http://localhost:5005";
+//export const ip = "http://localhost:5005";
 
 
 export const getUserByEmailAndPassword = async (email, password)=> {
